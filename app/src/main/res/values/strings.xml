@@ -1,7 +1,4 @@
 <resources>
-
-    <!--広告まわり-->
-
     <!--VPAまわり-->
     <string-array name="dof_en">
         <item>"Sa"</item>
