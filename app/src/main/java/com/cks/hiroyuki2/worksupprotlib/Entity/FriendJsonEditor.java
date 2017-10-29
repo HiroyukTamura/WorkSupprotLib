@@ -27,8 +27,8 @@ import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
 
-import static com.cks.hiroyuki2.worksupportlibrary.Util.DEFAULT;
-import static com.cks.hiroyuki2.worksupportlibrary.Util.logStackTrace;
+import static com.cks.hiroyuki2.worksupprotlib.Util.DEFAULT;
+import static com.cks.hiroyuki2.worksupprotlib.Util.logStackTrace;
 
 /**
  * 友人リストをローカルで保持するファイルを編集するおじさん！

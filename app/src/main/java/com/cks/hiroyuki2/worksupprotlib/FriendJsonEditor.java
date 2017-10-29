@@ -12,6 +12,7 @@ import android.support.annotation.Nullable;
 import com.cks.hiroyuki2.worksupprotlib.Entity.Content;
 import com.cks.hiroyuki2.worksupprotlib.Entity.Group;
 import com.cks.hiroyuki2.worksupprotlib.Entity.User;
+import com.google.firebase.database.DataSnapshot;
 
 import org.json.JSONArray;
 import org.json.JSONException;

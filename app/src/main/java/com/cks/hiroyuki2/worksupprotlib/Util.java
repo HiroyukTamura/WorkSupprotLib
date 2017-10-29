@@ -135,7 +135,7 @@ public class Util {
     public static final int RC_SIGN_IN = 100;
     public static final String INTENT_KEY_NEW_PARAM = "INTENT_KEY_NEW_PARAM";
 
-    final static String storageRoot = "gs://worksupport3.appspot.com/";
+    final static String storageRoot = "gs://worksupprotlib.appspot.com/";
     public static final String URL_SHORTEN_API = "https://www.googleapis.com/urlshortener/v1/url"
             + "?key=AIzaSyDDrs60sI8h7JeNjR-VTAJcbdnwRB5bVrk";
 

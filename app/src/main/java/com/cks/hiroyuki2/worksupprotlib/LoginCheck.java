@@ -28,12 +28,12 @@ import java.util.Arrays;
 import java.util.List;
 
 import static android.content.Context.MODE_PRIVATE;
-import static com.cks.hiroyuki2.worksupportlibrary.Util.PREF_KEY_PROF;
-import static com.cks.hiroyuki2.worksupportlibrary.Util.PREF_NAME;
-import static com.cks.hiroyuki2.worksupportlibrary.Util.QR_FILE_NAME;
-import static com.cks.hiroyuki2.worksupportlibrary.Util.RC_SIGN_IN;
-import static com.cks.hiroyuki2.worksupportlibrary.Util.delimiter;
-import static com.cks.hiroyuki2.worksupportlibrary.Util.logStackTrace;
+import static com.cks.hiroyuki2.worksupprotlib.Util.PREF_KEY_PROF;
+import static com.cks.hiroyuki2.worksupprotlib.Util.PREF_NAME;
+import static com.cks.hiroyuki2.worksupprotlib.Util.QR_FILE_NAME;
+import static com.cks.hiroyuki2.worksupprotlib.Util.RC_SIGN_IN;
+import static com.cks.hiroyuki2.worksupprotlib.Util.delimiter;
+import static com.cks.hiroyuki2.worksupprotlib.Util.logStackTrace;
 
 /**
  * アプリ起動時に、ログインしているかどうかとかそこらへんを担ってくれるおじさん！

@@ -9,8 +9,8 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.widget.Toast;
 
-import com.cks.hiroyuki2.worksupport3.R;
-import com.cks.hiroyuki2.worksupport3.Util;
+import com.cks.hiroyuki2.worksupportlib.R;
+import com.cks.hiroyuki2.worksupprotlib.Util;
 import com.google.firebase.database.DataSnapshot;
 
 import org.jetbrains.annotations.Contract;
@@ -21,9 +21,9 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.cks.hiroyuki2.worksupport3.FriendJsonEditor.getOneGroupFromJson;
-import static com.cks.hiroyuki2.worksupport3.FriendJsonEditor.snap2Json;
-import static com.cks.hiroyuki2.worksupport3.Util.logStackTrace;
+import static com.cks.hiroyuki2.worksupprotlib.FriendJsonEditor.getOneGroupFromJson;
+import static com.cks.hiroyuki2.worksupprotlib.FriendJsonEditor.snap2Json;
+import static com.cks.hiroyuki2.worksupprotlib.Util.logStackTrace;
 
 /**
  * Fbの大きなノードのひとつGroupを一手に扱う巨大なクラス。このクラスは、{@link User}や{@link Content}から構成されます。

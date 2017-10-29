@@ -11,8 +11,6 @@ import com.cks.hiroyuki2.worksupprotlib.Util;
 
 import java.io.Serializable;
 
-import static com.cks.hiroyuki2.worksupport3.Util.getCalFromTimeEvent;
-
 /**
  * {@link TimeEvent}の兄弟分
  */

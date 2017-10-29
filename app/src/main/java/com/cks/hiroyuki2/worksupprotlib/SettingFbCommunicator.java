@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import com.cks.hiroyuki2.worksupportlib.R;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -43,6 +44,7 @@ import static com.cks.hiroyuki2.worksupprotlib.Util.onError;
 
 public abstract class SettingFbCommunicator implements OnSuccessListener<UploadTask.TaskSnapshot>, OnProgressListener<UploadTask.TaskSnapshot>, OnPausedListener<UploadTask.TaskSnapshot>, OnCompleteListener<Void>, ValueEventListener, DatabaseReference.CompletionListener {
     private static final String TAG = "MANUAL_TAG: " + SettingFbCommunicator.class.getSimpleName();
+    private OnFailureListener failureListener;
     public Fragment fragment;
     public Intent intent;
     private Uri downloadUrl;
@@ -64,6 +66,10 @@ public abstract class SettingFbCommunicator implements OnSuccessListener<UploadT
      */
     public SettingFbCommunicator(Fragment fragment, Intent intent, @schemeCode String scheme){
         this.fragment = fragment;
+        if (fragment instanceof OnFailureListener){
+            failureListener = (OnFailureListener) fragment;
+        } else
+            throw new IllegalArgumentException("ばか！");
         this.intent = intent;
         user = FirebaseAuth.getInstance().getCurrentUser();
         myUid = user.getUid();
@@ -84,7 +90,7 @@ public abstract class SettingFbCommunicator implements OnSuccessListener<UploadT
         String type = Util.getExtension(fragment.getContext(), uri);
         String fileName = myUid + "." + type;
 
-        FirebaseStorageUtil.uploadFile("profile_icon/" + fileName, uri, fragment, this, this, this);
+        FirebaseStorageUtil.uploadFile("profile_icon/" + fileName, uri, failureListener, this, this, this);
     }
 
     @Override

@@ -10,4 +10,8 @@
     <color name="word_green">#9BBB59</color>
     <color name="word_purple">#8064A2</color>
 
+    <color name="yellow">#FBD950</color>
+    <color name="pink">#ff5c8d</color>
+    <color name="orange_dark">#ff9800</color>
+
 </resources>

@@ -9,8 +9,8 @@ import android.support.annotation.NonNull;
 import java.io.Serializable;
 import java.util.Calendar;
 
-import static com.cks.hiroyuki2.worksupportlibrary.Util.cal2date;
-import static com.cks.hiroyuki2.worksupportlibrary.Util.datePattern;
+import static com.cks.hiroyuki2.worksupprotlib.Util.cal2date;
+import static com.cks.hiroyuki2.worksupprotlib.Util.datePattern;
 
 /**
  * {@link Document}の構成要素。
