@@ -182,7 +182,7 @@ public class UtilDialog implements DialogInterface.OnShowListener{
         dialog.getButton(BUTTON_POSITIVE).setEnabled(false);
     }
 
-    static void sendIntent(int callback, DialogFragment dialogFragment){
+    public static void sendIntent(int callback, DialogFragment dialogFragment){
         Fragment target = dialogFragment.getTargetFragment();
         if (target == null) return;
         Intent intent = new Intent();
@@ -190,13 +190,13 @@ public class UtilDialog implements DialogInterface.OnShowListener{
         target.onActivityResult(callback, Activity.RESULT_OK, intent);
     }
 
-    static AlertDialog.Builder editBuilder(AlertDialog.Builder builder, @Nullable String title, int positiveId, int negativeId, @Nullable View view, DialogInterface.OnClickListener positiveListener, @Nullable DialogInterface.OnClickListener negativeListener){
+    public static AlertDialog.Builder editBuilder(AlertDialog.Builder builder, @Nullable String title, int positiveId, int negativeId, @Nullable View view, DialogInterface.OnClickListener positiveListener, @Nullable DialogInterface.OnClickListener negativeListener){
         if (title != null && !title.isEmpty())
             builder.setTitle(title);
         return innerEditBuilder(builder, view, positiveId, negativeId, positiveListener, negativeListener);
     }
 
-    static AlertDialog.Builder editBuilder(AlertDialog.Builder builder, @StringRes int titleId, int positiveId, int negativeId, @Nullable View view, DialogInterface.OnClickListener positiveListener, @Nullable DialogInterface.OnClickListener negativeListener){
+    public static AlertDialog.Builder editBuilder(AlertDialog.Builder builder, @StringRes int titleId, int positiveId, int negativeId, @Nullable View view, DialogInterface.OnClickListener positiveListener, @Nullable DialogInterface.OnClickListener negativeListener){
         builder.setTitle(titleId);
         return innerEditBuilder(builder, view, positiveId, negativeId, positiveListener, negativeListener);
     }
@@ -212,7 +212,7 @@ public class UtilDialog implements DialogInterface.OnShowListener{
     }
 
     //カラーを選択したら、最後に選択した色をPrefに書き込み、記憶しておく。次回ダイアログを表示したときには、その色にチェックをして表示する
-    static void setColorCircle(@NonNull Context context, @NonNull LinearLayout root, @Nullable View.OnClickListener listener, final int num){
+    public static void setColorCircle(@NonNull Context context, @NonNull LinearLayout root, @Nullable View.OnClickListener listener, final int num){
         Log.d(TAG, "setColorCircle: fire");
         int id = UtilSpec.circleId.get(num);
         FrameLayout fm = root.findViewById(id);
@@ -221,7 +221,7 @@ public class UtilDialog implements DialogInterface.OnShowListener{
         iv.setOnClickListener(listener);
     }
 
-    static void onClickCircle(Context context, View clickedView, View rootView){
+    public  static void onClickCircle(Context context, View clickedView, View rootView){
         SharedPreferences pref = context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = pref.edit();
         int colorNum = Integer.valueOf((String) ((FrameLayout)clickedView.getParent()).getTag());
