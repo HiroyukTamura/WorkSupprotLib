@@ -8,7 +8,7 @@ import android.content.Context;
 import android.support.v4.content.ContextCompat;
 import android.text.style.ForegroundColorSpan;
 
-import com.cks.hiroyuki2.worksupport3.R;
+import com.cks.hiroyuki2.worksupportlib.R;
 import com.prolificinteractive.materialcalendarview.CalendarDay;
 import com.prolificinteractive.materialcalendarview.DayViewDecorator;
 import com.prolificinteractive.materialcalendarview.DayViewFacade;
