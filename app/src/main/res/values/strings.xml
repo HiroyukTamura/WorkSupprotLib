@@ -8,4 +8,15 @@
 
     <!--広告まわり-->
     <string name="banner_ad_unit_id_test">ca-app-pub-3940256099942544/6300978111</string>
+
+    <!--VPAまわり-->
+    <string-array name="dof_en">
+        <item>"Sa"</item>
+        <item>"S"</item>
+        <item>"M"</item>
+        <item>"Tu"</item>
+        <item>"W"</item>
+        <item>"Th"</item>
+        <item>"F"</item>
+    </string-array>
 </resources>
