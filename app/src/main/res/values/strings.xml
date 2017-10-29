@@ -13,4 +13,5 @@
     <string name="error">処理に失敗しました</string>
     <string name="over_size_err">20MBを超えるファイルはアップロードできません</string>
     <string name="hint_default">タグ名</string>
+    <string name="check_display_first">このタグを最初に表示する</string>
 </resources>
