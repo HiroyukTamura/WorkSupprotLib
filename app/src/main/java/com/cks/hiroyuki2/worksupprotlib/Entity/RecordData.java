@@ -12,7 +12,7 @@ import java.lang.reflect.Field;
 import java.util.HashMap;
 import java.util.List;
 
-import static com.cks.hiroyuki2.worksupportlibrary.Util.logStackTrace;
+import static com.cks.hiroyuki2.worksupprotlib.Util.logStackTrace;
 
 /**
  * 項目の記録を保持するクラス。このままFirebaseに書き込むことができる。

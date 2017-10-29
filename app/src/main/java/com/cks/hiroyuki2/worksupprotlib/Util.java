@@ -34,10 +34,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.cks.hiroyuki2.worksupportlibrary.Entity.RecordData;
-import com.cks.hiroyuki2.worksupportlibrary.Entity.TimeEvent;
-import com.cks.hiroyuki2.worksupportlibrary.Entity.TimeEventDataSet;
-import com.cks.hiroyuki2.worksupportlibrary.Entity.User;
+import com.cks.hiroyuki2.worksupprotlib.Entity.RecordData;
+import com.cks.hiroyuki2.worksupprotlib.Entity.TimeEvent;
+import com.cks.hiroyuki2.worksupprotlib.Entity.TimeEventDataSet;
+import com.cks.hiroyuki2.worksupprotlib.Entity.User;
 import com.crashlytics.android.Crashlytics;
 import com.crashlytics.android.answers.Answers;
 import com.crashlytics.android.answers.CustomEvent;

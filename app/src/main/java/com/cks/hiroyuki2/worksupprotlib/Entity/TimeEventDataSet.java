@@ -26,7 +26,7 @@ public class TimeEventDataSet implements Comparator<TimeEvent>{
     private List<TimeEvent> eventList;
     private List<TimeEventRange> rangeList;
 
-    TimeEventDataSet(@NonNull List<TimeEvent> eventList, @NonNull List<TimeEventRange> rangeList) {
+    public TimeEventDataSet(@NonNull List<TimeEvent> eventList, @NonNull List<TimeEventRange> rangeList) {
         this.eventList = eventList;
         Collections.sort(this.eventList, this);
         this.rangeList = rangeList;
