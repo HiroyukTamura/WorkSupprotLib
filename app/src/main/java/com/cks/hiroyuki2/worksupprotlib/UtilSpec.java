@@ -31,6 +31,7 @@ import static android.content.Context.WINDOW_SERVICE;
 
 public class UtilSpec {
     public final static List<Integer> colorId = setColorId();
+    public final static List<Integer> circleId = setCircleId();
 
     static Drawable getColoredGroupIcon(Context context){
         Drawable drawable = ContextCompat.getDrawable(context, R.drawable.ic_group_white_24dp).mutate();
@@ -57,6 +58,15 @@ public class UtilSpec {
         lp.setMargins(defaultMargin, 0, defaultMargin, adHeight + defaultMargin);
         lp.gravity = (Gravity.BOTTOM | Gravity.END);
         return lp;
+    }
+
+    private static List<Integer> setCircleId(){
+        List<Integer> circleId = new ArrayList<>();
+        circleId.add(R.id.color0);
+        circleId.add(R.id.color1);
+        circleId.add(R.id.color2);
+        circleId.add(R.id.color3);
+        return circleId;
     }
 
     //    R.color.word_red, R.color.word_green, R.color.word_blue, R.color.word_purple);

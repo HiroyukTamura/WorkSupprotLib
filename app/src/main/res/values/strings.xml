@@ -19,4 +19,8 @@
         <item>"Th"</item>
         <item>"F"</item>
     </string-array>
+
+    <string name="error">処理に失敗しました</string>
+    <string name="over_size_err">20MBを超えるファイルはアップロードできません</string>
+    <string name="msg_start_upload">アップロードしています...</string>
 </resources>

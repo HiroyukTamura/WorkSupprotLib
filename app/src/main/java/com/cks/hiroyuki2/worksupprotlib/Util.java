@@ -133,8 +133,11 @@ public class Util {
     public static final String LIST_MAP_VALUE = "VALUE";
     public static final String INDEX = "INDEX";
     public static final int RC_SIGN_IN = 100;
+    public static final String INTENT_KEY_NEW_PARAM = "INTENT_KEY_NEW_PARAM";
 
     final static String storageRoot = "gs://worksupport3.appspot.com/";
+    public static final String URL_SHORTEN_API = "https://www.googleapis.com/urlshortener/v1/url"
+            + "?key=AIzaSyDDrs60sI8h7JeNjR-VTAJcbdnwRB5bVrk";
 
     private static final String TAG = "MANUAL_TAG: " + Util.class.getSimpleName();
 
