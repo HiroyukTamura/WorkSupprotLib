@@ -28,7 +28,7 @@ public class AnalyticsTagpoolObserver {
     final static String POSITION = "POSITION";
     final static String TAG_BOTTOM = "TAG_BOTTOM";
 
-    AnalyticsTagpoolObserver(final FlowLayout fl, final List<View> tagList){
+    public AnalyticsTagpoolObserver(final FlowLayout fl, final List<View> tagList){
         this.fl = fl;
         this.tagList = tagList;
         fl.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
