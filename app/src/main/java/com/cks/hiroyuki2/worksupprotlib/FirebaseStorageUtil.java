@@ -190,6 +190,7 @@ public class FirebaseStorageUtil implements OnPausedListener, OnProgressListener
     }
     //endregion
 
+
     //region uploadまわり
     public static void uploadFile(@NonNull String childScheme, @NonNull Uri uri, @NonNull OnFailureListener onFailureListener,
                     @NonNull OnSuccessListener<UploadTask.TaskSnapshot> onSuccessListener,
