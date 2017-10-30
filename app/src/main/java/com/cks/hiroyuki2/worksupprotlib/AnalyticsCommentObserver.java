@@ -23,7 +23,7 @@ public class AnalyticsCommentObserver implements ViewTreeObserver.OnGlobalLayout
     private TextView tv;
     private int flHeight;
 
-    AnalyticsCommentObserver(FlowLayout fl, TextView tv){
+    public AnalyticsCommentObserver(FlowLayout fl, TextView tv){
         this.fl = fl;
         this.tv = tv;
         fl.getViewTreeObserver().addOnGlobalLayoutListener(this);
