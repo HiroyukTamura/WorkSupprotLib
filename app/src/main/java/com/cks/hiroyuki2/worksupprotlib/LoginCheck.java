@@ -9,10 +9,10 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
-import android.support.annotation.DrawableRes;
 import android.support.annotation.NonNull;
 import android.util.Log;
 
+import com.cks.hiroyuki2.worksupportlib.R;
 import com.firebase.ui.auth.AuthUI;
 import com.github.sumimakito.awesomeqr.AwesomeQRCode;
 import com.google.firebase.auth.FirebaseAuth;
@@ -61,11 +61,11 @@ public class LoginCheck {
         return auth.getCurrentUser() != null;
     }
 
-    public void signIn(boolean isPreSetting, @DrawableRes int logoRes) {
+    public void signIn(boolean isPreSetting) {
         Log.d(TAG, "signIn: fire");
         Intent intent = AuthUI.getInstance().createSignInIntentBuilder()
 //                        .setTheme(AuthUI.getDefaultTheme())
-                .setLogo(logoRes)
+                .setLogo(R.drawable.firebase_auth_120dp)
                 .setAvailableProviders(getProviderList())//最新バージョンではメソッド名変更
                 .setTosUrl(GOOGLE_TOS_URL)
                 .setPrivacyPolicyUrl(GOOGLE_PRIVACY_POLICY_URL)//最新バージョンではメソッドが存在
