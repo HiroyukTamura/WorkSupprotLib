@@ -20,24 +20,24 @@ import static com.cks.hiroyuki2.worksupprotlib.Util.cal2date;
 public class TimeEvent implements Serializable{
 
     private Calendar cal;
-    private boolean notSetDay;
     private String name;
-    private int colorNum = 0;
+    private int colorNum;
+    private int offset;
 
-    public TimeEvent(@NonNull String name, int colorNum, @IntRange(from = 0, to = 24) int hour, @IntRange(from = 0, to = 60) int min){
+    public TimeEvent(@NonNull String name, int colorNum, @IntRange(from = 0, to = 24) int hour, @IntRange(from = 0, to = 60) int min, int offset){
         this.name = name;
         this.colorNum = colorNum;
-        notSetDay = true;
+        this.offset = offset;
         cal = Calendar.getInstance();
         cal.set(Calendar.HOUR_OF_DAY, hour);
         cal.set(Calendar.MINUTE, min);
     }
 
-    public TimeEvent(@NonNull String name, int colorNum, @NonNull Calendar cal){
+    public TimeEvent(@NonNull String name, int colorNum, @NonNull Calendar cal, int offset){
         this.name = name;
-        notSetDay = false;
         this.cal = cal;
         this.colorNum = colorNum;
+        this.offset = offset;
     }
 
     public int getHour() {
@@ -78,5 +78,13 @@ public class TimeEvent implements Serializable{
 
     public void setColorNum(int colorNum) {
         this.colorNum = colorNum;
+    }
+
+    public int getOffset() {
+        return offset;
+    }
+
+    public void setOffset(int offset) {
+        this.offset = offset;
     }
 }
