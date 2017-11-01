@@ -99,12 +99,12 @@ public class TemplateEditor {
                     break;
                 case 1:
                     data.dataType = 1;//タイムライン
-                    TimeEvent wakeUp = new TimeEvent("起床", 0, 7, 0);
-                    TimeEvent sleep = new TimeEvent("就寝", 0, 22, 0);
+                    TimeEvent wakeUp = new TimeEvent("起床", 0, 7, 0, 0);
+                    TimeEvent sleep = new TimeEvent("就寝", 0, 22, 0, 0);
                     TimeEventRange range = new TimeEventRange(wakeUp, sleep);
                     List<TimeEventRange> rangeList = new LinkedList<>();
                     rangeList.add(range);
-                    TimeEvent lunch = new TimeEvent("昼食", 0, 13, 0);
+                    TimeEvent lunch = new TimeEvent("昼食", 0, 13, 0, 0);
                     List<TimeEvent> eventList = new LinkedList<>();
                     eventList.add(lunch);
                     TimeEventDataSet dataSet = new TimeEventDataSet(eventList, rangeList);
