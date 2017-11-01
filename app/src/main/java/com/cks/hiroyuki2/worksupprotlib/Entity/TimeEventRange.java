@@ -7,9 +7,9 @@ package com.cks.hiroyuki2.worksupprotlib.Entity;
 import android.support.annotation.IntRange;
 import android.support.annotation.NonNull;
 
-import com.cks.hiroyuki2.worksupprotlib.Util;
-
 import java.io.Serializable;
+
+import static com.cks.hiroyuki2.worksupprotlib.Util.getCalFromTimeEvent;
 
 /**
  * {@link TimeEvent}の兄弟分
@@ -75,10 +75,15 @@ public class TimeEventRange implements Serializable{
     }
 
     public void sort(){
-        if (Util.getCalFromTimeEvent(start).compareTo(Util.getCalFromTimeEvent(end)) > 0){
-            TimeEvent t = end;
-            end = start;
-            start = t;
+        if (start.getOffset() > end.getOffset() ||
+                getCalFromTimeEvent(start).compareTo(getCalFromTimeEvent(end)) > 0){
+            convert();
         }
+    }
+
+    private void convert(){
+        TimeEvent t = end;
+        end = start;
+        start = t;
     }
 }
