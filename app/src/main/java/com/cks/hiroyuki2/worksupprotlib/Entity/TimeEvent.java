@@ -19,7 +19,7 @@ import static com.cks.hiroyuki2.worksupprotlib.Util.cal2date;
 
 public class TimeEvent implements Serializable{
 
-    private Calendar cal;
+    private Calendar cal;//日付部分は使用しない。時間としてのみ使い、日付はoffsetで管理する。
     private String name;
     private int colorNum;
     private int offset;
