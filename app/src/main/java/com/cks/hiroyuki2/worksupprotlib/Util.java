@@ -421,7 +421,7 @@ public class Util {
     /**************************** data⇔BundleParams ここまで**********************************/
     //endregion
 
-    static void printHashKey(Context context) {
+    public static void printHashKey(Context context) {
         try {
             PackageInfo info = context.getPackageManager().getPackageInfo(context.getPackageName(), PackageManager.GET_SIGNATURES);
             for (android.content.pm.Signature signature : info.signatures) {
