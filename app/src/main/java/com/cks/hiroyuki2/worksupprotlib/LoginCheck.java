@@ -70,7 +70,7 @@ public class LoginCheck {
                 .setTosUrl(GOOGLE_TOS_URL)
                 .setPrivacyPolicyUrl(GOOGLE_PRIVACY_POLICY_URL)//最新バージョンではメソッドが存在
 //                        .setIsSmartLockEnabled(mEnableCredentialSelector.isChecked(), mEnableHintSelector.isChecked())//最新バージョンでは引数変更
-                .setIsSmartLockEnabled(false)
+                .setIsSmartLockEnabled(true)
                 .setAllowNewEmailAccounts(true)
                 .build();
 
@@ -86,7 +86,7 @@ public class LoginCheck {
                 new AuthUI.IdpConfig.Builder(AuthUI.EMAIL_PROVIDER).build(),
                 new AuthUI.IdpConfig.Builder(AuthUI.PHONE_VERIFICATION_PROVIDER).build(),
                 new AuthUI.IdpConfig.Builder(AuthUI.GOOGLE_PROVIDER).build(),
-                new AuthUI.IdpConfig.Builder(AuthUI.FACEBOOK_PROVIDER).build());
+                new AuthUI.IdpConfig.Builder(AuthUI.FACEBOOK_PROVIDER).build(),
                 new AuthUI.IdpConfig.Builder(AuthUI.TWITTER_PROVIDER).build());
     }
 
