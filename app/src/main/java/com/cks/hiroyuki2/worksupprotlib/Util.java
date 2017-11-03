@@ -34,6 +34,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.cks.hiroyuki2.worksupportlib.R;
 import com.cks.hiroyuki2.worksupprotlib.Entity.RecordData;
 import com.cks.hiroyuki2.worksupprotlib.Entity.TimeEvent;
 import com.cks.hiroyuki2.worksupprotlib.Entity.TimeEventDataSet;
@@ -687,5 +688,26 @@ public class Util {
             return null;
 
         return new Gson().fromJson(string, TimeEventDataSet.class);
+    }
+
+    @NonNull
+    public static String getStrOffset(@NonNull Context context, @NonNull TimeEvent timeEvent){
+        if (timeEvent.getOffset() <0){
+            return context.getString(R.string.yesterday);
+        } else if (timeEvent.getOffset() >0){
+            return context.getString(R.string.tomorrow);
+        } else {
+            return "";
+        }
+    }
+
+    @Nullable
+    public static RecordData getRecordDataByType(List<RecordData> dataList, int dataType){
+        for (RecordData data: dataList) {
+            if (data.getDataType() == dataType){
+                return data;
+            }
+        }
+        return null;
     }
 }

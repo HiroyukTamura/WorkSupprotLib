@@ -14,4 +14,7 @@
     <string name="over_size_err">20MBを超えるファイルはアップロードできません</string>
     <string name="hint_default">タグ名</string>
     <string name="check_display_first">このタグを最初に表示する</string>
+
+    <string name="yesterday">（前日）</string>
+    <string name="tomorrow">（翌日）</string>
 </resources>
