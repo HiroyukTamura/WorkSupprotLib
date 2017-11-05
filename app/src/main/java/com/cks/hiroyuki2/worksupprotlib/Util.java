@@ -88,6 +88,7 @@ public class Util {
     public final static String PREF_KEY_WIDTH = "width";
     public final static String PREF_KEY_GROUP_USER_DATA = "group_in_userdata_node";
     public final static String TEMPLATE_SERIALIZE = "template.bat";
+    public final static String TEMPLATE_SERIALIZE_DEFAULT = "template_def.bat";
     public final static String QR_FILE_NAME = "uid_qr.img";
     public final static String PREF_KEY_PARAM_RADIO_ID = "param_radio_id";
     public final static String DATE_PATTERN_YM = "yyyyMM";

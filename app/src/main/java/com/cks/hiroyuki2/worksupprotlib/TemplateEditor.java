@@ -25,6 +25,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 import static com.cks.hiroyuki2.worksupprotlib.Util.TEMPLATE_SERIALIZE;
+import static com.cks.hiroyuki2.worksupprotlib.Util.TEMPLATE_SERIALIZE_DEFAULT;
 import static com.cks.hiroyuki2.worksupprotlib.Util.delimiter;
 import static com.cks.hiroyuki2.worksupprotlib.Util.logStackTrace;
 
@@ -38,7 +39,16 @@ public class TemplateEditor {
 
     @Nullable
     public static List<RecordData> deSerialize(Context context){
-        Log.d(TAG, "deSerialize: fire");
+        return innerDeSerialize(context, TEMPLATE_SERIALIZE);
+    }
+
+    @Nullable
+    public static List<RecordData> deSerializeDefault(Context context){
+        return innerDeSerialize(context, TEMPLATE_SERIALIZE_DEFAULT);
+    }
+
+    @Nullable
+    private static List<RecordData> innerDeSerialize(Context context, String fileName){
         List<RecordData> data = null;
         try {
             FileInputStream fis = context.openFileInput(TEMPLATE_SERIALIZE);
@@ -75,8 +85,16 @@ public class TemplateEditor {
     }
 
     public static boolean applyTemplate(List<RecordData> list, Context context){
+        return innerApplyTemplate(list, context, TEMPLATE_SERIALIZE);
+    }
+
+    public static boolean applyTemplateAsDefault(List<RecordData> list, Context context){
+        return innerApplyTemplate(list, context, TEMPLATE_SERIALIZE_DEFAULT);
+    }
+
+    private static boolean innerApplyTemplate(List<RecordData> list, Context context, String fileName){
         try {
-            ObjectOutputStream out = new ObjectOutputStream(context.openFileOutput(TEMPLATE_SERIALIZE, Context.MODE_PRIVATE));
+            ObjectOutputStream out = new ObjectOutputStream(context.openFileOutput(fileName, Context.MODE_PRIVATE));
             out.writeObject(list);
             out.close();
             return true;
