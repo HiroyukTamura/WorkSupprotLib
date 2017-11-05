@@ -13,6 +13,7 @@ import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
+import android.graphics.PorterDuff;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.OpenableColumns;
@@ -21,12 +22,14 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.annotation.StringRes;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
 import android.util.Base64;
 import android.util.Log;
 import android.util.TypedValue;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.webkit.MimeTypeMap;
 import android.widget.EditText;
@@ -709,5 +712,29 @@ public class Util {
             }
         }
         return null;
+    }
+
+    @Contract("null, _, _ -> null")
+    @Nullable
+    public static View makeCircleAndTxt(@Nullable Context context, @NonNull String value, int colorNum){
+        if (context == null) return null;
+
+        LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        if (inflater == null) return null;
+
+        View view = inflater.inflate(R.layout.analytics_table_tag, null);
+        TextView tv = view.findViewById(R.id.tv);
+        tv.setText(value);
+        int colorId = UtilSpec.colorId.get(colorNum);
+        int color = ContextCompat.getColor(context, colorId);
+        ImageView iv = view.findViewById(R.id.circle);
+        iv.getDrawable().mutate().setColorFilter(color, PorterDuff.Mode.SRC);
+        return view;
+    }
+
+    public static Calendar getCopyOfCal(Calendar target){
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(target.getTime());
+        return cal;
     }
 }
