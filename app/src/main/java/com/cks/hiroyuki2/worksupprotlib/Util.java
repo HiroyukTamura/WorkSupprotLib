@@ -139,6 +139,12 @@ public class Util {
     public static final String INDEX = "INDEX";
     public static final int RC_SIGN_IN = 100;
     public static final String INTENT_KEY_NEW_PARAM = "INTENT_KEY_NEW_PARAM";
+    //region Dialog周りの定数
+    public static final String INTENT_KEY_ISSUCCESS = "IKI";
+    public static final String INTENT_KEY_METHOD = "IKM";
+    public static final String INTENT_KEY_NEW_PARAM = "INTENT_KEY_NEW_PARAM";
+    public static final String ACCOUNT_NAME = "ACCOUNT_NAME";
+    //endregion
 
     final static String storageRoot = "gs://worksupprotlib.appspot.com/";
     public static final String URL_SHORTEN_API = "https://www.googleapis.com/urlshortener/v1/url"
@@ -737,5 +743,12 @@ public class Util {
         Calendar cal = Calendar.getInstance();
         cal.setTime(target.getTime());
         return cal;
+    }
+
+    @NonNull
+    public static String cal2DateWithSlash(@NonNull Calendar cal, @NonNull Context context){
+        String md = cal2date(cal, DATE_PATTERN_SLASH_MD);
+        String[] dof = context.getResources().getStringArray(R.array.dof);
+        return md +" "+ dof[cal.get(Calendar.DAY_OF_WEEK)];
     }
 }

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="comment_max_len">5000</integer>
+    <integer name="firebase_account_max">15</integer>
+    <integer name="firebase_min_pw_len">6</integer>
+</resources>
