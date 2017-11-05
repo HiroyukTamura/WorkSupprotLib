@@ -24,7 +24,7 @@ public class TimeEventRange implements Serializable{
     public TimeEventRange(@NonNull TimeEvent start, @NonNull TimeEvent end){
         this.start = start;
         this.end = end;
-        sort();
+//        sort();
     }
 
     public TimeEvent getStart() {
@@ -33,7 +33,7 @@ public class TimeEventRange implements Serializable{
 
     public void setStart(TimeEvent start) {
         this.start = start;
-        sort();
+//        sort();
     }
 
     public TimeEvent getEnd() {
@@ -42,7 +42,7 @@ public class TimeEventRange implements Serializable{
 
     public void setEnd(TimeEvent end) {
         this.end = end;
-        sort();
+//        sort();
     }
 
     public int getColorNum() {
@@ -74,19 +74,19 @@ public class TimeEventRange implements Serializable{
                 break;
         }
 
-        sort();
+//        sort();
     }
 
-    public void sort(){
-        if (start.getOffset() > end.getOffset() ||
-                getCalFromTimeEvent(start).compareTo(getCalFromTimeEvent(end)) > 0){
-            convert();
-        }
-    }
-
-    private void convert(){
-        TimeEvent t = end;
-        end = start;
-        start = t;
-    }
+//    public void sort(){
+//        if (start.getOffset() > end.getOffset() ||
+//                getCalFromTimeEvent(start).compareTo(getCalFromTimeEvent(end)) > 0){
+//            convert();
+//        }
+//    }
+//
+//    private void convert(){
+//        TimeEvent t = end;
+//        end = start;
+//        start = t;
+//    }
 }
