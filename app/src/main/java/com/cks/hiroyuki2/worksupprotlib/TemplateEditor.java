@@ -100,8 +100,8 @@ public class TemplateEditor {
                 case 1:
                     data.dataType = 1;//タイムライン
                     TimeEvent wakeUp = new TimeEvent("起床", 0, 7, 0, 0);
-                    TimeEvent sleep = new TimeEvent("就寝", 0, 22, 0, 0);
-                    TimeEventRange range = new TimeEventRange(wakeUp, sleep);
+                    TimeEvent sleep = new TimeEvent("就寝", 0, 22, 0, -1);
+                    TimeEventRange range = new TimeEventRange(sleep, wakeUp);
                     List<TimeEventRange> rangeList = new LinkedList<>();
                     rangeList.add(range);
                     TimeEvent lunch = new TimeEvent("昼食", 0, 13, 0, 0);
@@ -117,14 +117,14 @@ public class TemplateEditor {
                 case 2:
                     data.dataType = 2;//タグプール
                     data.dataName = "注意サイン";
-                    data.data.put("0", "息苦しい" + delimiter + "0" + delimiter + "false");
-                    data.data.put("1", "震え" + delimiter + "1" + delimiter + "false");
+                    data.data.put("0", "息苦しい" + delimiter + "0" + delimiter + "true");
+                    data.data.put("1", "震え" + delimiter + "1" + delimiter + "true");
                     data.data.put("2", "やけ食いする" + delimiter + "2" + delimiter + "false");
                     break;
                 case 3:
                     data.dataType = 2;
                     data.dataName = "危険サイン";
-                    data.data.put("0", "動けない" + delimiter + "0" + delimiter + "false");
+                    data.data.put("0", "動けない" + delimiter + "0" + delimiter + "true");
                     data.data.put("1", "テンションが上がる" + delimiter + "1" + delimiter + "false");
                     data.data.put("2", "謝りすぎる" + delimiter + "2" + delimiter + "false");
                     break;
@@ -135,9 +135,9 @@ public class TemplateEditor {
                     break;
                 case 5:
                     data.dataType = 3;
-                    data.dataName = "服薬";
-                    data.data.put("0", "0" + delimiter + "朝" + delimiter + "true");
-                    data.data.put("1", "0" + delimiter +  "頓服" + delimiter + "false" );
+                    data.dataName = "生活";
+                    data.data.put("0", "0" + delimiter + "朝食" + delimiter + "false");
+                    data.data.put("1", "0" + delimiter +  "定時出勤" + delimiter + "true" );
                     data.data.put("2", "1" + delimiter +  "気分" + delimiter + "3" + delimiter + "5");
                     break;
             }
