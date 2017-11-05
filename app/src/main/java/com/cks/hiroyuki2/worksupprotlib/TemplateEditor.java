@@ -162,6 +162,6 @@ public class TemplateEditor {
             list.add(data);
         }
 
-        return applyTemplate(list, context);
+        return applyTemplate(list, context) && applyTemplateAsDefault(list, context);
     }
 }
