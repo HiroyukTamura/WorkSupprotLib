@@ -2,8 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="com.cks.hiroyuki2.worksupport3.Fragments.HelpFragment">
+    android:orientation="vertical">
 
     <!--<item-->
         <!--android:id="@+id/nav_camera"-->

@@ -277,4 +277,7 @@
     <string name="about_input_credit">&lt;a href=&quot;http://www.freepik.com&quot;&gt;Designed by Freepik&lt;/a&gt;</string>
     <string name="about_meeting_credit">&lt;a href=&quot;http://www.freepik.com&quot;&gt;Designed by Freepik&lt;/a&gt;</string>
     <string name="title5">使い方</string>
+
+    <string name="error_load_img">画像の読み込みに失敗しました</string>
+    <string name="about_set_val0">アプリをアンインストールした際にデータも削除する</string>
 </resources>
