@@ -10,7 +10,6 @@
     xmlns:ads="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.cks.hiroyuki2.worksupport3.Activities.MainActivity"
     android:id="@+id/coordinator">
 
     <android.support.design.widget.AppBarLayout
