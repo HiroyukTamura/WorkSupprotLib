@@ -25,7 +25,6 @@
 
     </android.support.design.widget.TextInputLayout>
 
-
     <!--<AutoCompleteTextView-->
     <!--android:layout_width="match_parent"-->
     <!--android:layout_height="wrap_content"-->
