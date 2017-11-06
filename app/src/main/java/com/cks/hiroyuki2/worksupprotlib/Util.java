@@ -138,7 +138,6 @@ public class Util {
     public static final String LIST_MAP_VALUE = "VALUE";
     public static final String INDEX = "INDEX";
     public static final int RC_SIGN_IN = 100;
-    public static final String INTENT_KEY_NEW_PARAM = "INTENT_KEY_NEW_PARAM";
     //region Dialog周りの定数
     public static final String INTENT_KEY_ISSUCCESS = "IKI";
     public static final String INTENT_KEY_METHOD = "IKM";
