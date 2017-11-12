@@ -16,6 +16,7 @@
         android:layout_marginLeft="16dp"
         android:layout_gravity="center_horizontal"
         android:text="@string/qr_mine_dsc"
+        android:textSize="16sp"
         android:textColor="@color/colorPrimaryDark"
         android:id="@+id/my_qr"/>
 
@@ -38,6 +39,7 @@
         android:layout_gravity="center_horizontal"
         android:theme="@style/PrimaryFlatButton"
         android:text="@string/qr_button_value"
+        android:textSize="16sp"
         android:id="@+id/camera_btn"/>
 
 </LinearLayout>
