@@ -15,6 +15,8 @@ import com.cks.hiroyuki2.worksupportlib.R;
 import com.cks.hiroyuki2.worksupprotlib.Entity.RecordData;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
@@ -22,6 +24,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import org.jetbrains.annotations.Contract;
 
@@ -35,6 +39,8 @@ import static com.cks.hiroyuki2.worksupprotlib.Util.DATE_PATTERN_YM;
 import static com.cks.hiroyuki2.worksupprotlib.Util.DEFAULT;
 import static com.cks.hiroyuki2.worksupprotlib.Util.cal2date;
 import static com.cks.hiroyuki2.worksupprotlib.Util.datePattern;
+import static com.cks.hiroyuki2.worksupprotlib.Util.delimiterOfNum;
+import static com.cks.hiroyuki2.worksupprotlib.Util.logStackTrace;
 import static com.cks.hiroyuki2.worksupprotlib.Util.makeScheme;
 import static com.cks.hiroyuki2.worksupprotlib.Util.onError;
 
@@ -49,6 +55,7 @@ public class FirebaseConnection implements GoogleApiClient.OnConnectionFailedLis
     private DatabaseReference mDatabase;
     private String userId;
     private ChildEventListener childtListener;
+    private String[] holidaySet;
     private static FirebaseConnection firebase = new FirebaseConnection();
 //    public static final String datePattern = "yyyyMMdd";
 //    public static final String delimiter = "9mVSv";
@@ -137,7 +144,7 @@ public class FirebaseConnection implements GoogleApiClient.OnConnectionFailedLis
 //                });
 //    }
 
-    public void setFireBaseRefs(Context context){
+    public void setFireBaseRefs(final Context context){
         final String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
         mDatabase = FirebaseDatabase.getInstance().getReference();
         userRecDir = mDatabase.child("usersParam").child(userId);
@@ -154,6 +161,23 @@ public class FirebaseConnection implements GoogleApiClient.OnConnectionFailedLis
 //        }
 
         setListenerForInitNode(context);
+
+        FirebaseFirestore.getInstance().collection("holiday").document("all").get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (!task.isSuccessful()) {
+                    logStackTrace(task.getException());
+                    return;
+                }
+
+                DocumentSnapshot document = task.getResult();
+                if (document == null) {
+                    onError(context, "document== null", null);
+                    return;
+                }
+                holidaySet = document.getData().get("all").toString().split(delimiterOfNum);
+            }
+        });
     }
 
     private boolean getInternetState(Context context){
