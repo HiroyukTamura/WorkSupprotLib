@@ -9,12 +9,17 @@ import android.support.v4.content.ContextCompat;
 import android.text.style.ForegroundColorSpan;
 
 import com.cks.hiroyuki2.worksupportlib.R;
+import com.cks.hiroyuki2.worksupprotlib.FirebaseConnection;
 import com.prolificinteractive.materialcalendarview.CalendarDay;
 import com.prolificinteractive.materialcalendarview.DayViewDecorator;
 import com.prolificinteractive.materialcalendarview.DayViewFacade;
 import com.prolificinteractive.materialcalendarview.MaterialCalendarView;
 
 import java.util.Calendar;
+import java.util.List;
+
+import static com.cks.hiroyuki2.worksupprotlib.Util.cal2date;
+import static com.cks.hiroyuki2.worksupprotlib.Util.datePattern;
 
 /**
  * 曜日ごとに色付けしてくれるおじさん！
@@ -26,16 +31,18 @@ public class MSVDecorator implements DayViewDecorator{
     private MaterialCalendarView mcv;
     private Context context;
     private boolean isCurrentMon;
+    private List<String> holidayList;
 
     public MSVDecorator(MaterialCalendarView mcv, Context context){
         this.mcv = mcv;
         this.context = context;
+        this.holidayList = FirebaseConnection.getInstance().getHolidayArr();
     }
 
     @Override
     public boolean shouldDecorate(CalendarDay day) {
         isCurrentMon = day.getMonth() == mcv.getCurrentDate().getMonth();
-        return checkDayOfWeek(day, Calendar.SUNDAY, isCurrentMon);
+        return checkDayOfWeek(day, Calendar.SUNDAY, isCurrentMon) || isHoliday(day.getCalendar());
     }
 
     @Override
@@ -54,5 +61,10 @@ public class MSVDecorator implements DayViewDecorator{
 //        boolean b = isCurrentMon == (day.getMonth() == mcv.getCurrentDate().getMonth());
         return dow == dayOfWeek;
 //                && b;
+    }
+
+    private boolean isHoliday(Calendar cal){
+        String str = cal2date(cal, datePattern);
+        return holidayList.contains(str);
     }
 }

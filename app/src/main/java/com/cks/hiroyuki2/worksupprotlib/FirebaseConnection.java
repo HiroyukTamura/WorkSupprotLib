@@ -30,13 +30,13 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import org.jetbrains.annotations.Contract;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 
-import static com.cks.hiroyuki2.worksupprotlib.Util.DATE_PATTERN_YM;
 import static com.cks.hiroyuki2.worksupprotlib.Util.DEFAULT;
 import static com.cks.hiroyuki2.worksupprotlib.Util.cal2date;
 import static com.cks.hiroyuki2.worksupprotlib.Util.datePattern;
@@ -56,7 +56,7 @@ public class FirebaseConnection implements GoogleApiClient.OnConnectionFailedLis
     private DatabaseReference mDatabase;
     private String userId;
     private ChildEventListener childtListener;
-    private List<String> holidayArr;
+    private List<String> holidayArr = new ArrayList<>();
     private static FirebaseConnection firebase = new FirebaseConnection();
 //    public static final String datePattern = "yyyyMMdd";
 //    public static final String delimiter = "9mVSv";
@@ -71,6 +71,7 @@ public class FirebaseConnection implements GoogleApiClient.OnConnectionFailedLis
         return firebase;
     }
 
+    @NonNull
     public List<String> getHolidayArr() {
         return holidayArr;
     }
@@ -393,12 +394,12 @@ public class FirebaseConnection implements GoogleApiClient.OnConnectionFailedLis
         map.put(makeScheme("friend", uid, DEFAULT, "name"), DEFAULT);
         map.put(makeScheme("friend", uid, DEFAULT, "photoUrl"), DEFAULT);
         map.put(makeScheme("userParam", uid), DEFAULT);
-        Calendar cal = Calendar.getInstance();
-        for (int i=0; i<12; i++){
-            String yearMon =  cal2date(cal, DATE_PATTERN_YM);
-            map.put(yearMon, DEFAULT);
-            cal.add(Calendar.MONTH, 1);
-        }
+//        Calendar cal = Calendar.getInstance();
+//        for (int i=0; i<12; i++){
+//            String yearMon =  cal2date(cal, DATE_PATTERN_YM);
+//            map.put(yearMon, DEFAULT);
+//            cal.add(Calendar.MONTH, 1);
+//        }
 
         getRootRef().updateChildren(map, this);
     }
