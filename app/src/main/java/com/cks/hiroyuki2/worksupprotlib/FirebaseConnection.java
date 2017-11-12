@@ -55,7 +55,12 @@ public class FirebaseConnection implements GoogleApiClient.OnConnectionFailedLis
     private DatabaseReference mDatabase;
     private String userId;
     private ChildEventListener childtListener;
-    private String[] holidaySet;
+
+    public String[] getHolidayArr() {
+        return holidayArr;
+    }
+
+    private String[] holidayArr;
     private static FirebaseConnection firebase = new FirebaseConnection();
 //    public static final String datePattern = "yyyyMMdd";
 //    public static final String delimiter = "9mVSv";
@@ -175,7 +180,7 @@ public class FirebaseConnection implements GoogleApiClient.OnConnectionFailedLis
                     onError(context, "document== null", null);
                     return;
                 }
-                holidaySet = document.getData().get("all").toString().split(delimiterOfNum);
+                holidayArr = document.getData().get("all").toString().split(delimiterOfNum);
             }
         });
     }
