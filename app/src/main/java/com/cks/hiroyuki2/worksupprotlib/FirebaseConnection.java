@@ -30,6 +30,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import org.jetbrains.annotations.Contract;
 
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
@@ -55,12 +56,7 @@ public class FirebaseConnection implements GoogleApiClient.OnConnectionFailedLis
     private DatabaseReference mDatabase;
     private String userId;
     private ChildEventListener childtListener;
-
-    public String[] getHolidayArr() {
-        return holidayArr;
-    }
-
-    private String[] holidayArr;
+    private List<String> holidayArr;
     private static FirebaseConnection firebase = new FirebaseConnection();
 //    public static final String datePattern = "yyyyMMdd";
 //    public static final String delimiter = "9mVSv";
@@ -73,6 +69,10 @@ public class FirebaseConnection implements GoogleApiClient.OnConnectionFailedLis
     public static FirebaseConnection getInstance(){
         Log.d(TAG, "getInstance: fire");
         return firebase;
+    }
+
+    public List<String> getHolidayArr() {
+        return holidayArr;
     }
 
     FirebaseConnection(){
@@ -180,7 +180,7 @@ public class FirebaseConnection implements GoogleApiClient.OnConnectionFailedLis
                     onError(context, "document== null", null);
                     return;
                 }
-                holidayArr = document.getData().get("all").toString().split(delimiterOfNum);
+                holidayArr = Arrays.asList(document.getData().get("all").toString().split(delimiterOfNum));
             }
         });
     }
