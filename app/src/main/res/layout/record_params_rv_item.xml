@@ -32,12 +32,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/checkbox"
+            android:layout_gravity="center_vertical"
             android:layout_marginEnd="16dp"
             android:visibility="gone"/>
 
         <org.adw.library.widgets.discreteseekbar.DiscreteSeekBar
             android:layout_width="100dp"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
             android:id="@+id/seek_bar"
             app:dsb_min="1"
             android:visibility="gone"/>
@@ -46,6 +48,7 @@
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_marginEnd="16dp"
+            android:layout_gravity="center_vertical"
             android:src="@drawable/arrows"
             android:rotation="90"
             android:tint="@color/blue_gray"
@@ -56,6 +59,7 @@
         <ImageView
             android:layout_width="24dp"
             android:layout_height="24dp"
+            android:layout_gravity="center_vertical"
             android:src="@drawable/ic_close_white_24dp"
             android:tint="@color/blue_gray"
             android:visibility="gone"
