@@ -88,7 +88,7 @@ public class TimeEvent implements Serializable{
         this.offset = offset;
     }
 
-    public long getHourLong(){
-        return getHour() + ((long)getMin())/60;
+    public float getHourFloat(){
+        return getHour() + (float) ((float) getMin())/60f;
     }
 }

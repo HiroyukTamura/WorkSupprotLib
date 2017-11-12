@@ -686,6 +686,7 @@ public class Util {
         Calendar calendar = Calendar.getInstance();
         calendar.set(Calendar.HOUR, timeEvent.getHour());
         calendar.set(Calendar.MINUTE, timeEvent.getMin());
+        calendar.add(Calendar.DATE, timeEvent.getOffset());
         return calendar;
     }
 
