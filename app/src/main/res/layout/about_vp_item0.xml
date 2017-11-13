@@ -11,7 +11,7 @@
         android:orientation="horizontal"
         android:foreground="?android:attr/selectableItemBackground"
         android:background="?android:attr/selectableItemBackground"
-        android:id="@+id/ll1"
+        android:id="@+id/setting_ll0"
         android:clickable="true"
         android:focusable="true">
 
