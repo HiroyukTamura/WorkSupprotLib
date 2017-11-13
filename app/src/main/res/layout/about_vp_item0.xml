@@ -45,7 +45,8 @@
                 android:textSize="16sp"
                 android:layout_gravity="center_vertical"
                 android:clickable="false"
-                android:focusable="false"/>
+                android:focusable="false"
+                android:id="@+id/title_ll1"/>
 
             <TextView
                 android:layout_width="wrap_content"
