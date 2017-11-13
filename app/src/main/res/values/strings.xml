@@ -107,7 +107,7 @@
     <string name="license">ライセンス</string>
     <string name="dev_msg">もし不具合や改善点、「こんな機能があったらいいな」といった要望などありましたら、ぜひぜひメールしてください。開発のヒントになるので、遠慮なくお願いします。</string>
     <string name="dev_address">hiroyuktamura@gmail.com</string>
-    <string name="dev_name">田村 浩幸</string>
+    <string name="dev_name">開発者</string>
     <string name="overview">今後予定している改善点</string>
     <string name="beforeview">これまでの経過</string>
     <string name="overview_msg">・テンプレートの並び替え\n・初期起動時に操作説明を行う\n・祝日の反映\n・週の始まりの曜日を設定できるようにする</string>
@@ -117,7 +117,7 @@
     </string>
     <string name="about_vp_title0">設定</string>
     <string name="about_vp_title1">アバウト</string>
-    <string name="library">アプリ・ライブラリ</string>
+    <string name="library">ライブラリ</string>
 
     <!--ログインまわり-->
     <string name="facebook_app_id">123697191641575</string>
@@ -285,4 +285,5 @@
     <string name="tp_check1">当日</string>
     <string name="tp_check2">翌日</string>
     <string name="about_set_val0_sub">全ての記録・ユーザを削除し、グループから退会します</string>
+    <string name="tos">プライバシーポリシー・免責事項</string>
 </resources>
