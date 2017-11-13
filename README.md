@@ -23,9 +23,9 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ```
 
-['material-calendarview'](https://github.com/prolificinteractive/material-calendarview)
+[material-calendarview](https://github.com/prolificinteractive/material-calendarview)
 
-['gson'](https://github.com/google/gson)
+[gson](https://github.com/google/gson)
 ```
 Copyright 2008 Google Inc.
 
@@ -42,7 +42,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ```
 
-['OkHttp']('http://square.github.io/okhttp/')
+[OkHttp](http://square.github.io/okhttp/)
 ```
 Copyright 2016 Square, Inc.
 
@@ -59,7 +59,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ```
 
-['SmoothCheckBox'](https://github.com/andyxialm/SmoothCheckBox)
+[SmoothCheckBox](https://github.com/andyxialm/SmoothCheckBox)
 ```
 Copyright 2015, 2016 andy
 
@@ -110,7 +110,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ```
 
-['picasso'](https://github.com/square/picasso)
+[picasso](https://github.com/square/picasso)
 ```
 Copyright 2013 Square, Inc.
 
@@ -127,11 +127,11 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ```
 
-['FirebaseUI-Android'](https://github.com/firebase/FirebaseUI-Android)
+[FirebaseUI-Android](https://github.com/firebase/FirebaseUI-Android)
 
-['AwesomeQRCode'](https://github.com/SumiMakito/AwesomeQRCode)
+[AwesomeQRCode](https://github.com/SumiMakito/AwesomeQRCode)
 
-['material-sheet-fab'](https://github.com/gowong/material-sheet-fab)
+[material-sheet-fab](https://github.com/gowong/material-sheet-fab)
 ```
 The MIT License (MIT)
 
