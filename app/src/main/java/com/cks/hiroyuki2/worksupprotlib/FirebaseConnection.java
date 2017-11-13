@@ -386,7 +386,6 @@ public class FirebaseConnection implements GoogleApiClient.OnConnectionFailedLis
     private void initNode(){
         String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
         String date = cal2date(Calendar.getInstance(), datePattern);
-        //このへんまとめられる！！
         HashMap<String, Object> map = new HashMap<>();
         map.put(makeScheme("userData", uid, "registeredDate"), date);
         map.put(makeScheme("userData", uid, "template"), DEFAULT);

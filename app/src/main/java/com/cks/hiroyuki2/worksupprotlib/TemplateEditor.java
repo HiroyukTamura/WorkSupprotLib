@@ -32,7 +32,6 @@ import static com.cks.hiroyuki2.worksupprotlib.Util.logStackTrace;
 /**
  * テンプレ編集を担うおじさん！信頼が厚い！
  */
-
 public class TemplateEditor {
 
     private static final String TAG = "TemplateEditor";
