@@ -76,7 +76,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ```
 
-['NumberPicker'](https://github.com/ShawnLin013/NumberPicker)
+[NumberPicker](https://github.com/ShawnLin013/NumberPicker)
 ```
 Copyright (C) 2016 ShawnLin013(Shawn Lin)
 
@@ -93,7 +93,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 ```
 
-['discreteSeekBar'](https://github.com/AnderWeb/discreteSeekBar)
+[discreteSeekBar](https://github.com/AnderWeb/discreteSeekBar)
 ```
 Copyright 2014 Gustavo Claramunt (Ander Webbs)
 
@@ -156,7 +156,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
 
-['butterknife'](https://github.com/JakeWharton/butterknife)
+[butterknife](https://github.com/JakeWharton/butterknife)
 ```
 Copyright 2013 Jake Wharton
 
