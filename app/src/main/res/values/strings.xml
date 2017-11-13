@@ -279,9 +279,10 @@
     <string name="title5">使い方</string>
 
     <string name="error_load_img">画像の読み込みに失敗しました</string>
-    <string name="about_set_val0">アプリをアンインストールした際にデータも削除する</string>
+    <string name="about_set_val0">workSupportから退会する</string>
     <string name="timeline_name">イベント</string>
     <string name="tp_check0">前日</string>
     <string name="tp_check1">当日</string>
     <string name="tp_check2">翌日</string>
+    <string name="about_set_val0_sub">全ての記録・ユーザを削除し、グループから退会します</string>
 </resources>
