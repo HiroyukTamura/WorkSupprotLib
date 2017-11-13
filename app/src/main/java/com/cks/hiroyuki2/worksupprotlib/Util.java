@@ -10,6 +10,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.content.res.TypedArray;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -752,5 +753,13 @@ public class Util {
         String md = cal2date(cal, DATE_PATTERN_SLASH_MD);
         String[] dof = context.getResources().getStringArray(R.array.dof);
         return md +" "+ dof[cal.get(Calendar.DAY_OF_WEEK)];
+    }
+
+    public static int getToolBarHeight(Context context) {
+        int[] attrs = new int[] {R.attr.actionBarSize};
+        TypedArray ta = context.obtainStyledAttributes(attrs);
+        int toolBarHeight = ta.getDimensionPixelSize(0, -1);
+        ta.recycle();
+        return toolBarHeight;
     }
 }
