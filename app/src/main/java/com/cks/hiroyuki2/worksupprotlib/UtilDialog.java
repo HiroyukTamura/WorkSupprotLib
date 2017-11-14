@@ -35,12 +35,9 @@ import static android.content.DialogInterface.BUTTON_POSITIVE;
 import static com.cks.hiroyuki2.worksupprotlib.Util.PREF_KEY_COLOR;
 import static com.cks.hiroyuki2.worksupprotlib.Util.PREF_NAME;
 import static com.cks.hiroyuki2.worksupprotlib.Util.nullableEqual;
-import static com.cks.hiroyuki2.worksupprotlib.Util.PREF_KEY_COLOR;
-import static com.cks.hiroyuki2.worksupprotlib.Util.PREF_NAME;
-import static com.cks.hiroyuki2.worksupprotlib.Util.nullableEqual;
 
 /**
- * Created by hiroyuki2 on 2017/09/18.
+ * Dialogまわりの便利屋クラス。
  */
 
 public class UtilDialog implements DialogInterface.OnShowListener{
@@ -116,8 +113,9 @@ public class UtilDialog implements DialogInterface.OnShowListener{
         };
     }
 
-    public TextWatcher createTwMin(@IntegerRes final int min){
-        setDisEnableOkAtFirstIfNull();
+    public TextWatcher createTwMin(@IntegerRes final int min, final boolean rejectNull){
+        if (rejectNull)
+            setDisEnableOkAtFirstIfNull();
 
         return new TextWatcher() {
             @Override
@@ -129,9 +127,36 @@ public class UtilDialog implements DialogInterface.OnShowListener{
             @Override
             public void afterTextChanged(Editable editable) {
                 int minLen = dialog.getContext().getResources().getInteger(min);
-                if (editable == null || editable.toString().length() < minLen){
+                if (rejectNull && (editable == null || editable.toString().isEmpty())){
+                    dialog.getButton(BUTTON_POSITIVE).setEnabled(false);
+                } else if (editable == null || editable.toString().length() < minLen){
                     setDisEnableOk(restriction);
                 } else {
+                    setEnableOk(hintDef);
+                }
+            }
+        };
+    }
+
+    public TextWatcher createTwNonNull(){
+        setDisEnableOkAtFirstIfNull();
+
+        return new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                if (editable == null || editable.toString().isEmpty())
+                    dialog.getButton(BUTTON_POSITIVE).setEnabled(false);
+                else {
                     setEnableOk(hintDef);
                 }
             }
