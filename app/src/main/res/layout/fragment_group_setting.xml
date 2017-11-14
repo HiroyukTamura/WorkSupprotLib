@@ -12,9 +12,10 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <include
+        <FrameLayout
             android:id="@+id/header"
-            layout="@layout/setting_header" />
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
         <RelativeLayout
             android:id="@+id/item_exit"
