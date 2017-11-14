@@ -279,4 +279,5 @@
     <string name="pw">パスワード</string>
     <string name="pw_varidated">••••</string>
     <string name="email">e-mail</string>
+    <string name="notice_added">このユーザは既に追加されています</string>
 </resources>

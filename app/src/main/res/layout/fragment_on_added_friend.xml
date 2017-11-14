@@ -2,8 +2,8 @@
   ~ Copyright (c) $year. Hiroyuki Tamura All rights reserved.
   -->
 
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center_horizontal">
@@ -28,6 +28,19 @@
         android:textSize="20sp"
         android:textColor="@color/cardview_dark_background"
         android:id="@+id/name"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="48dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:text="@string/notice_added"
+        android:textSize="16sp"
+        android:textColor="@color/colorAccentDark"
+        android:visibility="gone"
+        android:id="@+id/error_tv"/>
 
     <Button
         android:layout_width="wrap_content"
