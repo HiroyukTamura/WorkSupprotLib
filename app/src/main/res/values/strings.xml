@@ -286,4 +286,6 @@
     <string name="tp_check2">翌日</string>
     <string name="about_set_val0_sub">全ての記録・ユーザを削除し、グループから退会します</string>
     <string name="tos">プライバシーポリシー・免責事項</string>
+    <string name="pw">パスワード</string>
+    <string name="pw_varidated">••••</string>
 </resources>
