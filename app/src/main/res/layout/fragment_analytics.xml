@@ -39,7 +39,8 @@
                     android:tint="@color/colorPrimaryDark"
                     android:background="@android:color/transparent"
                     android:clickable="true"
-                    android:contentDescription=""
+                    android:focusable="true"
+                    android:contentDescription="@string/cd_back_week"
                     android:id="@+id/up_btn"/>
 
                 <TextView
@@ -61,7 +62,8 @@
                     android:tint="@color/colorPrimaryDark"
                     android:background="@android:color/transparent"
                     android:clickable="true"
-                    android:contentDescription=""
+                    android:focusable="true"
+                    android:contentDescription="@string/cd_next_week"
                     android:id="@+id/down_btn"/>
 
             </LinearLayout>

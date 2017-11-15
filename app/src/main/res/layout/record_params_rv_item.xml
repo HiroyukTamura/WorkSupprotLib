@@ -55,7 +55,7 @@
             android:tint="@color/blue_gray"
             android:visibility="gone"
             android:id="@+id/max"
-            android:contentDescription=""/>
+            android:contentDescription="@string/cd_edit_maximum"/>
 
         <ImageView
             android:layout_width="24dp"
@@ -65,7 +65,7 @@
             android:tint="@color/blue_gray"
             android:visibility="gone"
             android:id="@+id/remove"
-            android:contentDescription=""/>
+            android:contentDescription="@string/cd_remove"/>
 
         <!--<com.github.channguyen.rsv.RangeSliderView-->
             <!--android:id="@+id/rsv_custom"-->

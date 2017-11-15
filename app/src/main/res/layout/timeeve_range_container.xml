@@ -5,6 +5,7 @@
 
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginTop="8dp"
@@ -49,7 +50,8 @@
                         android:contentDescription=""
                         android:tint="@color/word_purple"
                         android:id="@+id/start_circle"
-                        android:clickable="false" />
+                        android:clickable="false"
+                        tools:ignore="ContentDescription" />
 
                 </FrameLayout>
 
@@ -67,7 +69,8 @@
                         android:contentDescription=""
                         android:tint="@color/word_purple"
                         android:id="@+id/end_circle"
-                        android:clickable="false"/>
+                        android:clickable="false"
+                        tools:ignore="ContentDescription" />
 
                 </FrameLayout>
 
@@ -118,7 +121,7 @@
             android:src="@drawable/ic_close_white_24dp"
             android:background="@android:color/transparent"
             android:tint="@color/blue_gray"
-            android:contentDescription=""/>
+            android:contentDescription="@string/cd_remove"/>
 
     </LinearLayout>
 

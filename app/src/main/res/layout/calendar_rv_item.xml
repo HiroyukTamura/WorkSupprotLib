@@ -47,7 +47,7 @@
                 android:background="@android:color/white"
                 android:layout_gravity="center_vertical"
                 android:id="@+id/vert"
-                android:contentDescription=""/>
+                android:contentDescription="@string/cd_remove"/>
 
         </LinearLayout>
 

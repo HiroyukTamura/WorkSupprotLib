@@ -16,8 +16,8 @@
         android:paddingRight="8dp"
         android:paddingLeft="8dp"
         android:layout_gravity="center_horizontal"
-        android:contentDescription=""
-        android:id="@+id/icon"/>
+        android:contentDescription="@string/cd_icon"
+        android:id="@+id/icon" />
 
     <TextView
         android:layout_width="wrap_content"

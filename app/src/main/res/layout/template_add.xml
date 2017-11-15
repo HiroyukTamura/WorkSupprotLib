@@ -51,7 +51,8 @@
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:src="@drawable/screenshot_comment"
-                    android:scaleType="fitXY"/>
+                    android:scaleType="fitXY"
+                    android:contentDescription="@string/dsc_comment"/>
 
             </LinearLayout>
 
@@ -86,7 +87,8 @@
                    android:layout_marginTop="8dp"
                    android:scaleType="fitXY"
                    android:adjustViewBounds="true"
-                   android:src="@drawable/screenshot_tagpool" />
+                   android:src="@drawable/screenshot_tagpool"
+                   android:contentDescription="@string/dsc_tag"/>
 
            </LinearLayout>
 
@@ -120,7 +122,8 @@
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:src="@drawable/screenshot_params"
-                    android:scaleType="fitXY"/>
+                    android:scaleType="fitXY"
+                    android:contentDescription="@string/dsc_plot"/>
 
             </LinearLayout>
 

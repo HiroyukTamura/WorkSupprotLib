@@ -71,7 +71,8 @@
                 android:src="@drawable/ic_add_circle_black_36dp"
                 android:layout_gravity="center_horizontal"
                 android:background="@android:color/transparent"
-                android:id="@+id/add_btn"/>
+                android:id="@+id/add_btn"
+                android:contentDescription="@string/cd_add"/>
 
         </LinearLayout>
 

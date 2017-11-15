@@ -246,8 +246,8 @@
     <string name="tomorrow">（翌日）</string>
 
     <!--tutorialまわり-->
-    <string name="title0">WorkSupport</string>
-    <string name="desc0">ダウンロードありがとうございます。WorkSupportは、障害者の方がより働きやすくなるための体調管理・共有アプリです。</string>
+    <string name="title0">ChallengedKit(β)</string>
+    <string name="desc0">ダウンロードありがとうございます。ChallengedKit(β)は、障害者の方がより働きやすくなるための体調管理・共有アプリです。</string>
     <string name="title1">体調を記録</string>
     <string name="desc1">睡眠時間や服薬の有無など、毎日の体調を記録しましょう。</string>
     <string name="title2">記録を見える化して分析</string>
@@ -258,14 +258,14 @@
 
     <string name="launcher_icon">ランチャーアイコン</string>
     <string name="illustration">画像</string>
-    <string name="about_launcher_credit">designed by Dimi Kazak from Flaticon</string>
+    <string name="about_launcher_credit">designed by Maxim Basinski from Flaticon</string>
     <string name="about_analytics_credit">&lt;a href=&quot;http://www.freepik.com&quot;&gt;Designed by Photoroyalty / Freepik&lt;/a&gt;</string>
     <string name="about_input_credit">&lt;a href=&quot;http://www.freepik.com&quot;&gt;Designed by Freepik&lt;/a&gt;</string>
     <string name="about_meeting_credit">&lt;a href=&quot;http://www.freepik.com&quot;&gt;Designed by Freepik&lt;/a&gt;</string>
     <string name="title5">使い方</string>
 
     <string name="error_load_img">画像の読み込みに失敗しました</string>
-    <string name="about_set_val0">workSupportから退会する</string>
+    <string name="about_set_val0">ChallengedKit(β)から退会する</string>
     <string name="timeline_name">イベント</string>
     <string name="tp_check0">前日</string>
     <string name="tp_check1">当日</string>
@@ -279,4 +279,17 @@
 
     <string name="tp_range_msg">終了時刻が開始時刻より後になるようにしてください</string>
     <string name="non_user_err">参加できるユーザがいません</string>
+    <string name="back">戻る</string>
+    <string name="cd_prev_mon">前月へ</string>
+    <string name="cd_next_mon">翌月へ</string>
+    <string name="cd_menu">メニュー</string>
+    <string name="cd_icon">アイコン</string>
+    <string name="cd_vert">オプション</string>
+    <string name="cd_comment">投稿する</string>
+    <string name="cd_remove">削除</string>
+    <string name="cd_back_week">前週へ</string>
+    <string name="cd_next_week">翌週へ</string>
+    <string name="cd_edit">編集</string>
+    <string name="cd_add">追加</string>
+    <string name="cd_edit_maximum">最大値を変更</string>
 </resources>

@@ -4,6 +4,7 @@
   -->
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:id="@+id/item_ll"
@@ -24,7 +25,8 @@
         android:src="@drawable/circle"
         android:clickable="false"
         android:tint="@color/word_blue"
-        android:id="@+id/circle"/>
+        android:id="@+id/circle"
+        tools:ignore="ContentDescription" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -33,7 +35,6 @@
         android:layout_marginStart="@dimen/activity_horizontal_margin"
         android:layout_marginEnd="@dimen/activity_horizontal_margin"
         android:textSize="20sp"
-        android:text="12:00"
         android:textColor="@color/cardview_dark_background"
         android:clickable="false"
         android:id="@+id/time" />
@@ -46,7 +47,6 @@
         android:layout_marginStart="@dimen/activity_horizontal_margin"
         android:layout_marginEnd="@dimen/activity_horizontal_margin"
         android:textSize="18sp"
-        android:text="起床"
         android:textColor="@color/cardview_dark_background"
         android:clickable="false"
         android:id="@+id/value"/>
@@ -55,7 +55,7 @@
         android:layout_width="24dp"
         android:layout_height="24dp"
         android:layout_gravity="center_vertical"
-        android:contentDescription=""
+        android:contentDescription="@string/cd_remove"
         android:background="@android:color/transparent"
         android:src="@drawable/ic_close_white_24dp"
         android:tint="@color/blue_gray"

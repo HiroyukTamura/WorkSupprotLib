@@ -32,7 +32,8 @@
                 android:src="@drawable/ic_add_circle_black_36dp"
                 android:layout_marginRight="24dp"
                 android:layout_marginLeft="24dp"
-                android:id="@+id/bottom_add_btn"/>
+                android:id="@+id/bottom_add_btn"
+                android:contentDescription="@string/cd_add"/>
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -42,7 +43,7 @@
                 android:src="@drawable/ic_mode_edit_white_36dp"
                 android:tint="@color/blue_gray"
                 android:id="@+id/bottom_edit_btn"
-                android:contentDescription=""/>
+                android:contentDescription="@string/cd_edit"/>
 
             <android.support.v4.widget.Space
                 android:layout_width="0dp"
