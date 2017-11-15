@@ -7,14 +7,14 @@
     android:layout_height="match_parent"
     android:layout_weight="1"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:clickable="true">
+    android:clickable="true"
+    android:focusable="true">
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:visibility="gone"
         android:id="@+id/iv"
-        android:contentDescription="today"
         android:src="@drawable/circle"
         android:tint="@android:color/white"
         android:layout_gravity="center"

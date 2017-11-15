@@ -104,7 +104,7 @@
                 android:layout_height="match_parent"
                 android:src="@drawable/ic_close_white_24dp"
                 android:tint="@color/blue_gray"
-                android:contentDescription="remove"
+                android:contentDescription="@string/cd_remove"
                 android:id="@+id/remove"
                 android:visibility="gone"/>
 

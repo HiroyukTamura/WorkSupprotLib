@@ -27,7 +27,6 @@
         android:foreground="?android:attr/selectableItemBackground"
         android:background="?android:attr/selectableItemBackground"
         android:textSize="20sp"
-        android:text="12:00"
         android:textColor="@color/cardview_dark_background"
         android:id="@+id/time" />
 
@@ -41,7 +40,6 @@
         android:foreground="?android:attr/selectableItemBackground"
         android:background="?android:attr/selectableItemBackground"
         android:textSize="18sp"
-        android:text="起床"
         android:textColor="@color/cardview_dark_background"
         android:id="@+id/value"/>
 

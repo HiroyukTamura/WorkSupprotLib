@@ -39,7 +39,7 @@
                 android:layout_height="wrap_content"
                 android:paddingStart="8dp"
                 android:src="@drawable/ic_close_white_24dp"
-                android:contentDescription="remove"
+                android:contentDescription="@string/cd_remove"
                 android:id="@+id/remove"
                 android:visibility="gone"/>
 

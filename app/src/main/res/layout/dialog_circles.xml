@@ -22,7 +22,7 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:contentDescription="yellow"
+            android:contentDescription="@string/cd_yellow"
             android:src="@drawable/circle"
             android:tint="@color/pink" />
 
@@ -31,7 +31,7 @@
             android:layout_height="match_parent"
             android:padding="8dp"
             android:src="@drawable/ic_check_white_48dp"
-            android:contentDescription="check"
+            android:contentDescription="@string/cd_check"
             android:visibility="invisible"
             android:clickable="false"/>
 
@@ -51,7 +51,7 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:contentDescription="pink"
+            android:contentDescription="@string/cd_orange"
             android:src="@drawable/circle"
             android:tint="@color/orange_dark" />
 
@@ -60,7 +60,7 @@
             android:layout_height="match_parent"
             android:padding="8dp"
             android:src="@drawable/ic_check_white_48dp"
-            android:contentDescription="check"
+            android:contentDescription="@string/cd_check"
             android:visibility="invisible"
             android:clickable="false"/>
 
@@ -80,7 +80,7 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:contentDescription="blue"
+            android:contentDescription="@string/cd_blue"
             android:src="@drawable/circle"
             android:tint="@android:color/holo_blue_dark" />
 
@@ -89,7 +89,7 @@
             android:layout_height="match_parent"
             android:padding="8dp"
             android:src="@drawable/ic_check_white_48dp"
-            android:contentDescription="check"
+            android:contentDescription="@string/cd_check"
             android:visibility="invisible"
             android:clickable="false"/>
 
@@ -109,7 +109,7 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:contentDescription="gray"
+            android:contentDescription="@string/cd_gray"
             android:src="@drawable/circle"
             android:tint="@android:color/tab_indicator_text" />
 
@@ -118,7 +118,7 @@
             android:layout_height="match_parent"
             android:padding="8dp"
             android:src="@drawable/ic_check_white_48dp"
-            android:contentDescription="check"
+            android:contentDescription="@string/cd_check"
             android:visibility="invisible"
             android:clickable="false"/>
 

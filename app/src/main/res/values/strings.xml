@@ -292,4 +292,11 @@
     <string name="cd_edit">編集</string>
     <string name="cd_add">追加</string>
     <string name="cd_edit_maximum">最大値を変更</string>
+    <string name="cd_yellow">yellow</string>
+    <string name="cd_check">check</string>
+    <string name="cd_orange">orange</string>
+    <string name="cd_blue">blue</string>
+    <string name="cd_gray">gray</string>
+    <string name="checkBox">チェックボックス</string>
+    <string name="numeric">数値</string>
 </resources>
