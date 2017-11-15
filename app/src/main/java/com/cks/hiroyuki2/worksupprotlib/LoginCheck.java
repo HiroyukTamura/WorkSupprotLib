@@ -65,7 +65,7 @@ public class LoginCheck {
         Log.d(TAG, "signIn: fire");
         Intent intent = AuthUI.getInstance().createSignInIntentBuilder()
 //                        .setTheme(AuthUI.getDefaultTheme())
-                .setLogo(R.drawable.firebase_auth_120dp)
+                .setLogo(R.drawable.ic_launcher_foreground)// TODO: 2017/11/15 要修正これでは画像が粗い
                 .setAvailableProviders(getProviderList())//最新バージョンではメソッド名変更
                 .setTosUrl(GOOGLE_TOS_URL)
                 .setPrivacyPolicyUrl(GOOGLE_PRIVACY_POLICY_URL)//最新バージョンではメソッドが存在

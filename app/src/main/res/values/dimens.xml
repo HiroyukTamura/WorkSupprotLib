@@ -30,7 +30,7 @@
 
     <!--analyticsまわり-->
     <dimen name="wof_width">40dp</dimen>
-    <dimen name="legend_total_height">56dp</dimen><!--これは?atter/actionBarSizeの値です-->
+    <dimen name="legend_total_height">56dp</dimen><!--これは?attr/actionBarSizeの値です-->
     <dimen name="check_drw_size">24dp</dimen>
     <dimen name="unchek_drw_thickness">2dp</dimen>
     <dimen name="toolbar_height">56dp</dimen>
