@@ -3,7 +3,7 @@
   -->
 
 <resources>
-    <string name="app_name">worksupport3</string>
+    <string name="app_name">ChallengedKit(β)</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -32,7 +32,6 @@
         <item>11月</item>
         <item>12月</item>
     </string-array>
-    <string name="firebase_client_id">490115270967-gcfpdtcgq1odrmc9lcl0imckqskkgn36.apps.googleusercontent.com</string>
 
     <!--dialogまわり-->
     <string name="ok">OK</string>
@@ -48,9 +47,6 @@
     <string name="hint_default">タグ名</string>
     <string name="hint_time_eve">項目名</string>
     <string name="title_range_val_title">項目名を編集</string>
-
-    <!--広告まわり-->
-    <string name="banner_ad_unit_id_test">ca-app-pub-3940256099942544/6300978111</string>
 
     <!--分析まわり-->
     <string-array name="dof">
@@ -280,4 +276,7 @@
     <string name="pw_varidated">••••</string>
     <string name="email">e-mail</string>
     <string name="notice_added">このユーザは既に追加されています</string>
+
+    <string name="tp_range_msg">終了時刻が開始時刻より後になるようにしてください</string>
+    <string name="non_user_err">参加できるユーザがいません</string>
 </resources>
