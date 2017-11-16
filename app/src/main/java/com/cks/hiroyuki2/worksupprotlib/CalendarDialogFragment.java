@@ -72,6 +72,7 @@ public class CalendarDialogFragment extends DialogFragment implements DialogInte
         rootView = (LinearLayout) getActivity().getLayoutInflater().inflate(R.layout.record_vp_item_tagitem_dialog2, null);
         addSchedule = new AddSchedule();
 //        ButterKnife.bind(addSchedule, rootView);
+        addSchedule.editText.setSingleLine();
         addSchedule.inputLayout.setHint(getContext().getString(R.string.dialog_title));
         int defId = UtilSpec.circleId.get(addSchedule.num);
         FrameLayout fm = rootView.findViewById(defId);
