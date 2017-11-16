@@ -34,7 +34,7 @@
                 android:clickable="false"
                 android:orientation="horizontal">
 
-                <android.support.v4.widget.CircleImageView
+                <de.hdodenhof.circleimageview.CircleImageView
                     android:layout_width="40dp"
                     android:layout_height="match_parent"
                     android:layout_marginEnd="16dp"
