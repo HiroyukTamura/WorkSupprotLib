@@ -6,6 +6,7 @@ package com.cks.hiroyuki2.worksupprotlib;
 
 import android.content.Context;
 import android.net.Uri;
+import android.os.Environment;
 import android.support.annotation.IntDef;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -55,9 +56,9 @@ public class FirebaseStorageUtil implements OnPausedListener, OnProgressListener
     public static final int LIMIT_SIZE_PROF = 5 * 1000 * 1000;
 
     @Retention(RetentionPolicy.SOURCE)
-    @IntDef({CODE_PRIVATE_FILE, CODE_CHASHE_FILE})
+    @IntDef({CODE_EXTERNAL_FILE, CODE_CHASHE_FILE})
     @interface CODE_FILE {}
-    public static final int CODE_PRIVATE_FILE = 0;
+    public static final int CODE_EXTERNAL_FILE = 0;
     public static final int CODE_CHASHE_FILE = 1;
 
     public FirebaseStorageUtil(Context context, Group group){
@@ -133,7 +134,7 @@ public class FirebaseStorageUtil implements OnPausedListener, OnProgressListener
 
         File storageDir = null;
         switch (witch){
-            case CODE_PRIVATE_FILE:
+            case CODE_EXTERNAL_FILE:
                 storageDir = new File(context.getFilesDir(), "Storage");
                 break;
             case CODE_CHASHE_FILE:

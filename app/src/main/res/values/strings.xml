@@ -247,7 +247,7 @@
 
     <!--tutorialまわり-->
     <string name="title0">ChallengedKit(β)</string>
-    <string name="desc0">ダウンロードありがとうございます。ChallengedKit(β)は、障害者の方がより働きやすくなるための体調管理・共有アプリです。</string>
+    <string name="desc0">ダウンロードありがとうございます。ChallengedKit(β)は、障がい者の方がより働きやすくなるための体調管理・共有アプリです。</string>
     <string name="title1">体調を記録</string>
     <string name="desc1">睡眠時間や服薬の有無など、毎日の体調を記録しましょう。</string>
     <string name="title2">記録を見える化して分析</string>
