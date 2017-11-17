@@ -36,6 +36,9 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:padding="16dp"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:background="?android:attr/selectableItemBackground"
+        android:id="@+id/item_remove"
         android:gravity="center_vertical">
 
         <ImageView
@@ -61,6 +64,9 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:padding="16dp"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:background="?android:attr/selectableItemBackground"
+        android:id="@+id/register_user"
         android:gravity="center_vertical">
 
         <ImageView
