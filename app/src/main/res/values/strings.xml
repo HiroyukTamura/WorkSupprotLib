@@ -302,4 +302,6 @@
 
     <string name="grp_set_invited_tag">招待中</string>
     <string name="invite">招待する</string>
+    <string name="register_user">自分のユーザリストに登録</string>
+    <string name="remove_user_grp">グループから退会させる</string>
 </resources>
