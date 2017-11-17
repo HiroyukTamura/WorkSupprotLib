@@ -14,69 +14,83 @@
             android:id="@+id/header"
             layout="@layout/setting_header" />
 
-        <RelativeLayout
+        <LinearLayout
             android:id="@+id/item_exit"
             android:layout_width="match_parent"
             android:layout_height="72dp"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"
-            android:paddingTop="16dp"
+            android:padding="16dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
             android:foreground="?android:attr/selectableItemBackground"
             android:background="?android:attr/selectableItemBackground">
 
-            <ImageView
-                android:id="@+id/exit_icon"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:layout_alignParentStart="true"
-                android:layout_centerVertical="true"
-                android:layout_marginEnd="32dp"
-                android:contentDescription="@string/exit_group"
-                android:src="@drawable/ic_exit_to_app_white_24dp"
-                android:tint="@color/colorAccentDark" />
+            <FrameLayout
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="16dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/circle"
+                    android:tint="@color/colorAccent"/>
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center"
+                    android:contentDescription="@string/exit_group"
+                    android:src="@drawable/ic_exit_to_app_white_24dp" />
+
+            </FrameLayout>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_toEndOf="@+id/exit_icon"
                 android:text="@string/exit_group"
                 android:textColor="@color/cardview_dark_background"
                 android:textSize="18sp" />
 
-        </RelativeLayout>
+        </LinearLayout>
 
-        <RelativeLayout
+        <LinearLayout
             android:id="@+id/item_invite"
             android:layout_width="match_parent"
             android:layout_height="72dp"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"
-            android:paddingTop="16dp"
+            android:padding="16dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
             android:foreground="?android:attr/selectableItemBackground"
             android:background="?android:attr/selectableItemBackground">
 
-            <ImageView
-                android:id="@+id/invite_icon"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:layout_alignParentStart="true"
-                android:layout_centerVertical="true"
-                android:layout_marginEnd="32dp"
-                android:contentDescription="@string/invite"
-                android:src="@drawable/ic_group_add_white_36dp"
-                android:tint="@color/colorAccentDark" />
+            <FrameLayout
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="16dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/circle"
+                    android:tint="@color/colorAccent"/>
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center"
+                    android:contentDescription="@string/exit_group"
+                    android:src="@drawable/ic_group_add_white_36dp" />
+
+            </FrameLayout>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_toEndOf="@+id/invite_icon"
                 android:text="@string/invite"
                 android:textColor="@color/cardview_dark_background"
                 android:textSize="18sp" />
 
-        </RelativeLayout>
+        </LinearLayout>
 
         <TextView
             android:layout_width="match_parent"
