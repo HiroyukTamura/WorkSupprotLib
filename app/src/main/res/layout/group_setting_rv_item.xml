@@ -15,12 +15,12 @@
         android:padding="16dp"
         android:orientation="horizontal"
         android:foreground="?android:attr/selectableItemBackground"
-        android:background="?android:attr/selectableItemBackground">
+        android:background="?android:attr/selectableItemBackground"
+        android:gravity="center_vertical">
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:layout_gravity="center_vertical"
             android:src="@drawable/ic_face_origin_48dp"
             android:id="@+id/icon"/>
 
@@ -29,7 +29,6 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_marginStart="16dp"
-            android:layout_gravity="center_vertical"
             android:lines="1"
             android:ellipsize="end"
             android:textColor="@color/cardview_dark_background"
@@ -48,16 +47,16 @@
         <include layout="@layout/record_vp_item_tagitem"
             android:id="@+id/invite_tag"/>
 
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_gravity="center_vertical"
-            android:background="@android:color/transparent"
-            android:src="@drawable/ic_close_white_24dp"
-            android:tint="@color/blue_gray"
-            android:id="@+id/remove_user"
-            android:contentDescription="@string/cd_remove"/>
+        <!--<ImageButton-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginStart="16dp"-->
+            <!--android:layout_gravity="center_vertical"-->
+            <!--android:background="@android:color/transparent"-->
+            <!--android:src="@drawable/ic_close_white_24dp"-->
+            <!--android:tint="@color/blue_gray"-->
+            <!--android:id="@+id/remove_user"-->
+            <!--android:contentDescription="@string/cd_remove"/>-->
 
     </LinearLayout>
 
