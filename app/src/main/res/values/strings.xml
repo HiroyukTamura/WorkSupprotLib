@@ -299,4 +299,6 @@
     <string name="cd_gray">gray</string>
     <string name="checkBox">チェックボックス</string>
     <string name="numeric">数値</string>
+
+    <string name="grp_set_invited_tag">招待中</string>
 </resources>

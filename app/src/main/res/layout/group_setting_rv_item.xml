@@ -45,6 +45,9 @@
             android:id="@+id/switch_widget"
             android:visibility="gone"/>
 
+        <include layout="@layout/record_vp_item_tagitem"
+            android:id="@+id/invite_tag"/>
+
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
