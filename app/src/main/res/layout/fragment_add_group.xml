@@ -12,7 +12,8 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <include layout="@layout/setting_header"/>
+        <include layout="@layout/setting_header"
+            android:id="@+id/header_layout"/>
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/recycler"
