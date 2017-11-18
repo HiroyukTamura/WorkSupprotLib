@@ -20,6 +20,7 @@
             android:layout_alignParentTop="true"
             android:layout_marginRight="32dp"
             android:layout_marginLeft="32dp"
+            android:layout_centerHorizontal="true"
             android:src="@drawable/out_of_service"
             android:contentDescription="@string/maintain_msg"/>
 
@@ -27,6 +28,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
             android:layout_marginRight="16dp"
             android:layout_marginLeft="16dp"
             android:textSize="20sp"

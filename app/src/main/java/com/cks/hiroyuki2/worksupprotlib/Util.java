@@ -19,6 +19,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.OpenableColumns;
 import android.support.annotation.DrawableRes;
+import android.support.annotation.IntRange;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.annotation.StringRes;
@@ -761,5 +762,37 @@ public class Util {
         int toolBarHeight = ta.getDimensionPixelSize(0, -1);
         ta.recycle();
         return toolBarHeight;
+    }
+
+    @Contract(pure = true)
+    public static int getMonthIllust(@IntRange(from = 0, to = 11) int mon){
+        switch (mon){
+            case 0:
+                return R.drawable.january;
+            case 1:
+                return R.drawable.february;
+            case 2:
+                return R.drawable.march;
+            case 3:
+                return R.drawable.april;
+            case 4:
+                return R.drawable.may;
+            case 5:
+                return R.drawable.june;
+            case 6:
+                return R.drawable.july;
+            case 7:
+                return R.drawable.august;
+            case 8:
+                return R.drawable.september;
+            case 9:
+                return R.drawable.october;
+            case 10:
+                return R.drawable.november;
+            case 11:
+                return R.drawable.december;
+            default:
+                return -1;
+        }
     }
 }
