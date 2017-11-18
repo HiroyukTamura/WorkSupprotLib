@@ -17,7 +17,8 @@
             android:background="?android:attr/selectableItemBackground"
             android:id="@+id/setting_ll0"
             android:clickable="true"
-            android:focusable="true">
+            android:focusable="true"
+            android:visibility="gone">
 
             <ImageView
                 android:layout_width="24dp"
@@ -73,8 +74,18 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="72dp"
-            android:orientation="horizontal"
-            android:visibility="gone">
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="24dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/ic_insert_photo_white_24dp"
+                android:tint="@color/colorPrimaryDark"
+                android:contentDescription="@string/about_set_val1"
+                android:clickable="false"
+                android:focusable="false"/>
 
             <TextView
                 android:layout_width="0dp"
@@ -96,8 +107,7 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="16dp"
                 android:layout_marginEnd="24dp"
-                android:id="@+id/toggle1"
-                android:checked="true"/>
+                android:id="@+id/toggle1" />
 
         </LinearLayout>
 
