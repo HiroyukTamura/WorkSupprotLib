@@ -87,7 +87,7 @@ public class Util {
     public final static String PREF_KEY_START_OF_WEEK = "start_of_week";
     public  final static String PREF_KEY_PHOTO_UPLOADED = "photo_uploaded";//最初はこの値はfalseとなっている。一旦画像を設定すると、trueになる。
     public final static String PREF_KEY_WIDTH = "width";
-    public final static String PREF_KEY_GROUP_USER_DATA = "group_in_userdata_node";
+//    public final static String PREF_KEY_GROUP_USER_DATA = "group_in_userdata_node";
     public final static String TEMPLATE_SERIALIZE = "template.bat";
     public final static String TEMPLATE_SERIALIZE_DEFAULT = "template_def.bat";
     public final static String QR_FILE_NAME = "uid_qr.img";
