@@ -135,6 +135,8 @@ public class Util {
     public static final String IS_DATA_MINE ="IS_DATA_MINE";
     public static final int NOTIFICATION_ID = 15973;
     public static final String NOTIFICATION_CHANNEL = "CHANNEL_0";
+    public static final int NOTIFICATION_ID_SECOND = 15974;
+    public static final String NOTIFICATION_CHANNEL_SECOND = "CHANNEL_1";
     public static final String LIST_MAP_HOUR = "HOUR";
     public static final String LIST_MAP_MIN = "MIN";
     public static final String LIST_MAP_VALUE = "VALUE";

@@ -183,7 +183,9 @@
     <string name="msg_failed_download">ダウンロードに失敗しました</string>
     <string name="msg_failed_upload">アップロードに失敗しました</string>
     <string name="ntf_channel">通信</string>
-    <string name="ntf_channel_description">ファイルのアップロード・ダウンロードなどを扱う通信関係の通知です</string>
+    <string name="ntf_channel_description">ファイルのアップロード・ダウンロードなどの通信関係の通知です</string>
+    <string name="ntf_channel2">インフォメーション</string>
+    <string name="ntf_channel2_description">サーバーの障害情報など、例外的な通知を扱う通知です</string>
 
     <!--addGroupまわり-->
     <string name="title_add_group">グループを作成</string>
@@ -308,4 +310,7 @@
     <string name="invite_done">招待しました</string>
     <string name="maintain_msg">現在、メンテナンス中です。\nご迷惑おかけしますが、作業完了までお待ちください。</string>
     <string name="no_network_msg">通信に失敗しました</string>
+
+    <string name="user_register_err">"ユーザ登録が必要です"</string>
+    <string name="register">登録する</string>
 </resources>
