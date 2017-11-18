@@ -304,4 +304,6 @@
     <string name="invite">招待する</string>
     <string name="register_user">自分のユーザリストに登録</string>
     <string name="remove_user_grp">グループから退会させる</string>
+    <string name="grp_no_addable_member">参加できるメンバーがいません</string>
+    <string name="invite_done">招待しました</string>
 </resources>
