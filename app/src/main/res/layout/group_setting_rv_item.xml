@@ -17,7 +17,8 @@
         android:orientation="horizontal"
         android:foreground="?android:attr/selectableItemBackground"
         android:background="?android:attr/selectableItemBackground"
-        android:gravity="center_vertical">
+        android:gravity="center_vertical"
+        android:id="@+id/group_rv_item_clicker">
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:layout_width="40dp"
