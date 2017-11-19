@@ -137,7 +137,7 @@ public class TemplateEditor {
                     data.dataType = 2;//タグプール
                     data.dataName = "症状・セルフケア";
                     data.data.put("0", "震え" + delimiter + "0" + delimiter + "true");
-                    data.data.put("1", "気分の低下" + delimiter + "1" + delimiter + "true");
+                    data.data.put("1", "気分の低下" + delimiter + "0" + delimiter + "true");
                     data.data.put("2", "神経質" + delimiter + "1" + delimiter + "false");
                     data.data.put("3", "休憩をもらう"+delimiter+"2"+delimiter+"true");
                     break;
