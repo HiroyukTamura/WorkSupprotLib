@@ -116,14 +116,16 @@ public class TemplateEditor {
                     break;
                 case 1:
                     data.dataType = 1;//タイムライン
-                    TimeEvent wakeUp = new TimeEvent("起床", 0, 7, 0, 0);
+                    TimeEvent wakeUp = new TimeEvent("起床", 0, 7, 30, 0);
                     TimeEvent sleep = new TimeEvent("就寝", 0, 22, 0, -1);
                     TimeEventRange range = new TimeEventRange(sleep, wakeUp);
                     List<TimeEventRange> rangeList = new LinkedList<>();
                     rangeList.add(range);
-                    TimeEvent lunch = new TimeEvent("昼食", 0, 13, 0, 0);
+                    TimeEvent departure = new TimeEvent("出勤", 0, 8, 0, 0);
+                    TimeEvent homeBack = new TimeEvent("帰宅", 0, 14, 40, 0);
                     List<TimeEvent> eventList = new LinkedList<>();
-                    eventList.add(lunch);
+                    eventList.add(departure);
+                    eventList.add(homeBack);
                     TimeEventDataSet dataSet = new TimeEventDataSet(eventList, rangeList);
                     data.data.put("0", new Gson().toJson(dataSet));
 //                    data.data.put("7:00", "起床" + FirebaseConnection.delimiter + "1");
@@ -133,17 +135,20 @@ public class TemplateEditor {
                     break;
                 case 2:
                     data.dataType = 2;//タグプール
-                    data.dataName = "注意サイン";
-                    data.data.put("0", "息苦しい" + delimiter + "0" + delimiter + "true");
-                    data.data.put("1", "震え" + delimiter + "1" + delimiter + "true");
-                    data.data.put("2", "やけ食いする" + delimiter + "2" + delimiter + "false");
+                    data.dataName = "症状・セルフケア";
+                    data.data.put("0", "震え" + delimiter + "0" + delimiter + "true");
+                    data.data.put("1", "気分の低下" + delimiter + "1" + delimiter + "true");
+                    data.data.put("2", "神経質" + delimiter + "1" + delimiter + "false");
+                    data.data.put("3", "休憩をもらう"+delimiter+"2"+delimiter+"true");
                     break;
                 case 3:
                     data.dataType = 2;
-                    data.dataName = "危険サイン";
-                    data.data.put("0", "動けない" + delimiter + "0" + delimiter + "true");
-                    data.data.put("1", "テンションが上がる" + delimiter + "1" + delimiter + "false");
-                    data.data.put("2", "謝りすぎる" + delimiter + "2" + delimiter + "false");
+                    data.dataName = "仕事内容";
+                    data.data.put("0", "資料作成" + delimiter + "1" + delimiter + "true");
+                    data.data.put("1", "バックヤード" + delimiter + "1" + delimiter + "true");
+                    data.data.put("2", "早出" + delimiter + "2" + delimiter + "false");
+                    data.data.put("3", "残業" + delimiter + "2" + delimiter + "true");
+                    data.data.put("4", "上司面談" + delimiter + "3" + delimiter + "true");
                     break;
                 case 4:
                     data.dataType = 4;
@@ -153,9 +158,11 @@ public class TemplateEditor {
                 case 5:
                     data.dataType = 3;
                     data.dataName = "生活";
-                    data.data.put("0", "0" + delimiter + "朝食" + delimiter + "false");
-                    data.data.put("1", "0" + delimiter +  "定時出勤" + delimiter + "true" );
-                    data.data.put("2", "1" + delimiter +  "気分" + delimiter + "3" + delimiter + "5");
+                    data.data.put("0", "0" + delimiter + "朝薬" + delimiter + "false");
+                    data.data.put("1", "0" + delimiter + "夕薬" + delimiter + "true");
+                    data.data.put("2", "0" + delimiter + "頓服" + delimiter + "true");
+                    data.data.put("3", "0" + delimiter + "定時出勤" + delimiter + "true" );
+                    data.data.put("4", "1" + delimiter +  "気分" + delimiter + "3" + delimiter + "5");
                     break;
             }
             list.add(data);
