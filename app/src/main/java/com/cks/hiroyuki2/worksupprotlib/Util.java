@@ -4,7 +4,10 @@
 
 package com.cks.hiroyuki2.worksupprotlib;
 
+import android.Manifest;
 import android.app.Activity;
+import android.app.Notification;
+import android.app.PendingIntent;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
@@ -24,6 +27,8 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.annotation.StringRes;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.NotificationCompat;
+import android.support.v4.app.NotificationManagerCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -35,6 +40,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.webkit.MimeTypeMap;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -47,9 +53,15 @@ import com.cks.hiroyuki2.worksupprotlib.Entity.User;
 import com.crashlytics.android.Crashlytics;
 import com.crashlytics.android.answers.Answers;
 import com.crashlytics.android.answers.CustomEvent;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdSize;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.storage.FileDownloadTask;
+import com.google.firebase.storage.UploadTask;
 import com.google.gson.Gson;
 import com.squareup.picasso.Picasso;
 
@@ -68,6 +80,8 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Locale;
 import java.util.Set;
+
+import static android.os.Build.VERSION.SDK_INT;
 
 /**
  * 便利屋おじさん！
@@ -796,5 +810,81 @@ public class Util {
             default:
                 return -1;
         }
+    }
+
+    public static void showUploadingNtf(Context context, UploadTask.TaskSnapshot taskSnapshot, String fileName, int id){
+        String text = context.getString(R.string.msg_start_upload);
+        NotificationCompat.Builder builder = createNtfBase(context, fileName, text, id)
+                .setAutoCancel(false)
+                .setProgress((int) taskSnapshot.getTotalByteCount(), (int) taskSnapshot.getBytesTransferred(), false);
+        if (SDK_INT >= 21)
+            builder.setCategory(Notification.CATEGORY_PROGRESS);
+        Notification notification = builder.build();
+        notification.flags = Notification.FLAG_NO_CLEAR;
+        showNtf(context, id, notification);
+    }
+
+    public static void showDownloadingNtf(Context context, FileDownloadTask.TaskSnapshot taskSnapshot, String fileName, int id){
+        String text = context.getString(R.string.msg_succeed_download);
+        NotificationCompat.Builder builder = createNtfBase(context, fileName, text, id)
+                .setAutoCancel(false)
+                .setProgress((int) taskSnapshot.getTotalByteCount(), (int) taskSnapshot.getBytesTransferred(), false);
+        if (SDK_INT >= 21)
+            builder.setCategory(Notification.CATEGORY_PROGRESS);
+        Notification notification = builder.build();
+        notification.flags = Notification.FLAG_NO_CLEAR;
+        showNtf(context, id, notification);
+    }
+
+    public static void showCompleteNtf(Context context, String fileName, int id, @StringRes int textRes){
+        String text = context.getString(textRes);
+        NotificationCompat.Builder builder = createNtfBase(context, fileName, text, id);
+        if (SDK_INT >= 21)
+            builder.setCategory(Notification.CATEGORY_STATUS);
+        showNtf(context, id, builder.build());
+    }
+
+    private static PendingIntent createPendingIntent(Context context, int id){
+        Intent intent = new Intent(context, MainActivity.class);
+        intent.setFlags(
+                Intent.FLAG_ACTIVITY_CLEAR_TOP  // 起動中のアプリがあってもこちらを優先する
+                        | Intent.FLAG_ACTIVITY_RESET_TASK_IF_NEEDED  // 起動中のアプリがあってもこちらを優先する
+                        | Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS  // 「最近利用したアプリ」に表示させない
+        );
+        return PendingIntent.getActivity(context, id, intent,
+                PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_ONE_SHOT);
+    }
+
+    private static NotificationCompat.Builder createNtfBase(Context context, String fileName, String text, int id){
+        return new NotificationCompat.Builder(context, NOTIFICATION_CHANNEL)
+                .setSmallIcon(R.drawable.ic_cloud_upload_white_24dp)// TODO: 2017/11/19 これ直すこと
+                .setContentTitle(fileName)
+                .setContentText(text)
+                .setTicker(text)
+                .setContentIntent(createPendingIntent(context, id));
+    }
+
+    private static void showNtf(Context context, int id, Notification ntf){
+        NotificationManagerCompat manager = NotificationManagerCompat.from(context);
+        manager.notify(id, ntf);
+    }
+
+    public static void showFcmMsg(String messageBody, Context context) {
+        final int ntfId = (int)System.currentTimeMillis();
+        String title = context.getString(R.string.app_name);
+
+        NotificationCompat.Builder notificationBuilder =
+                new NotificationCompat.Builder(context, NOTIFICATION_CHANNEL_SECOND)
+                        .setSmallIcon(R.drawable.ic_info_white_24dp)
+                        .setContentTitle(title)
+                        .setContentText(messageBody)
+                        .setAutoCancel(true)
+                        .setTicker(title)
+                        .setContentIntent(createPendingIntent(context, ntfId));
+
+        if (SDK_INT >= 21)
+            notificationBuilder.setCategory(Notification.CATEGORY_MESSAGE);
+
+        showNtf(context, ntfId, notificationBuilder.build());
     }
 }
