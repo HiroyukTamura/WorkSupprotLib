@@ -121,8 +121,8 @@ public class TemplateEditor {
                     TimeEventRange range = new TimeEventRange(sleep, wakeUp);
                     List<TimeEventRange> rangeList = new LinkedList<>();
                     rangeList.add(range);
-                    TimeEvent departure = new TimeEvent("出勤", 0, 8, 0, 0);
-                    TimeEvent homeBack = new TimeEvent("帰宅", 0, 14, 40, 0);
+                    TimeEvent departure = new TimeEvent("出勤", 2, 8, 0, 0);
+                    TimeEvent homeBack = new TimeEvent("帰宅", 2, 14, 40, 0);
                     List<TimeEvent> eventList = new LinkedList<>();
                     eventList.add(departure);
                     eventList.add(homeBack);

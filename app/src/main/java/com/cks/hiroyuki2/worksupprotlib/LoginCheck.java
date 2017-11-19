@@ -74,7 +74,7 @@ public class LoginCheck {
                 .setAllowNewEmailAccounts(true)
                 .build();
 
-        intent.putExtra(IS_PRE_SETTING, isPreSetting);
+//        intent.putExtra(IS_PRE_SETTING, isPreSetting);
 
         ((Activity)context).startActivityForResult(intent, RC_SIGN_IN);
     }
