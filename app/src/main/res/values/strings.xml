@@ -311,6 +311,7 @@
     <string name="maintain_msg">現在、メンテナンス中です。\nご迷惑おかけしますが、作業完了までお待ちください。</string>
     <string name="no_network_msg">通信に失敗しました</string>
 
-    <string name="user_register_err">"ユーザ登録が必要です"</string>
+    <string name="user_register_err">ユーザ登録が必要です</string>
     <string name="register">登録する</string>
+    <string name="announcement">お知らせ</string>
 </resources>
