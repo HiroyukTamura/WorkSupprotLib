@@ -812,9 +812,9 @@ public class Util {
         }
     }
 
-    public static void showUploadingNtf(Context context, UploadTask.TaskSnapshot taskSnapshot, String fileName, int id){
+    public static void showUploadingNtf(Class target, Context context, UploadTask.TaskSnapshot taskSnapshot, String fileName, int id){
         String text = context.getString(R.string.msg_start_upload);
-        NotificationCompat.Builder builder = createNtfBase(context, fileName, text, id)
+        NotificationCompat.Builder builder = createNtfBase(target, context, fileName, text, id)
                 .setAutoCancel(false)
                 .setProgress((int) taskSnapshot.getTotalByteCount(), (int) taskSnapshot.getBytesTransferred(), false);
         if (SDK_INT >= 21)
@@ -824,9 +824,9 @@ public class Util {
         showNtf(context, id, notification);
     }
 
-    public static void showDownloadingNtf(Context context, FileDownloadTask.TaskSnapshot taskSnapshot, String fileName, int id){
+    public static void showDownloadingNtf(Class target, Context context, FileDownloadTask.TaskSnapshot taskSnapshot, String fileName, int id){
         String text = context.getString(R.string.msg_succeed_download);
-        NotificationCompat.Builder builder = createNtfBase(context, fileName, text, id)
+        NotificationCompat.Builder builder = createNtfBase(target, context, fileName, text, id)
                 .setAutoCancel(false)
                 .setProgress((int) taskSnapshot.getTotalByteCount(), (int) taskSnapshot.getBytesTransferred(), false);
         if (SDK_INT >= 21)
@@ -836,16 +836,16 @@ public class Util {
         showNtf(context, id, notification);
     }
 
-    public static void showCompleteNtf(Context context, String fileName, int id, @StringRes int textRes){
+    public static void showCompleteNtf(Class target, Context context, String fileName, int id, @StringRes int textRes){
         String text = context.getString(textRes);
-        NotificationCompat.Builder builder = createNtfBase(context, fileName, text, id);
+        NotificationCompat.Builder builder = createNtfBase(target, context, fileName, text, id);
         if (SDK_INT >= 21)
             builder.setCategory(Notification.CATEGORY_STATUS);
         showNtf(context, id, builder.build());
     }
 
-    private static PendingIntent createPendingIntent(Context context, int id){
-        Intent intent = new Intent(context, MainActivity.class);
+    private static PendingIntent createPendingIntent(Context context, int id, Class target){
+        Intent intent = new Intent(context, target);
         intent.setFlags(
                 Intent.FLAG_ACTIVITY_CLEAR_TOP  // 起動中のアプリがあってもこちらを優先する
                         | Intent.FLAG_ACTIVITY_RESET_TASK_IF_NEEDED  // 起動中のアプリがあってもこちらを優先する
@@ -855,13 +855,13 @@ public class Util {
                 PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_ONE_SHOT);
     }
 
-    private static NotificationCompat.Builder createNtfBase(Context context, String fileName, String text, int id){
+    private static NotificationCompat.Builder createNtfBase(Class target, Context context, String fileName, String text, int id){
         return new NotificationCompat.Builder(context, NOTIFICATION_CHANNEL)
                 .setSmallIcon(R.drawable.ic_cloud_upload_white_24dp)// TODO: 2017/11/19 これ直すこと
                 .setContentTitle(fileName)
                 .setContentText(text)
                 .setTicker(text)
-                .setContentIntent(createPendingIntent(context, id));
+                .setContentIntent(createPendingIntent(context, id, target));
     }
 
     private static void showNtf(Context context, int id, Notification ntf){
@@ -869,7 +869,7 @@ public class Util {
         manager.notify(id, ntf);
     }
 
-    public static void showFcmMsg(String messageBody, Context context) {
+    public static void showFcmMsg(String messageBody, Context context, Class target) {
         final int ntfId = (int)System.currentTimeMillis();
         String title = context.getString(R.string.app_name);
 
@@ -880,7 +880,7 @@ public class Util {
                         .setContentText(messageBody)
                         .setAutoCancel(true)
                         .setTicker(title)
-                        .setContentIntent(createPendingIntent(context, ntfId));
+                        .setContentIntent(createPendingIntent(context, ntfId, target));
 
         if (SDK_INT >= 21)
             notificationBuilder.setCategory(Notification.CATEGORY_MESSAGE);
