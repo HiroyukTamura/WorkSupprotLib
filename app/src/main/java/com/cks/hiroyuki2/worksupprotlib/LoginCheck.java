@@ -92,6 +92,7 @@ public class LoginCheck {
     }
 
     public void writeLocalProf(){
+
         final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         if (user == null)
             return;
