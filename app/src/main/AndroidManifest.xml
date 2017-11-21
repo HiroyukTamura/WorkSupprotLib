@@ -3,20 +3,20 @@
     package="com.cks.hiroyuki2.worksupportlib">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <!--<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />-->
+    <!--<uses-permission android:name="android.permission.WAKE_LOCK" />-->
 
     <application>
-        <activity android:name="com.cks.hiroyuki2.worksupprotlib.MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <!--<activity android:name="com.cks.hiroyuki2.worksupprotlib.MainActivity">-->
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN" />-->
+                <!--<category android:name="android.intent.category.LAUNCHER" />-->
+            <!--</intent-filter>-->
+        <!--</activity>-->
 
-        <meta-data
-            android:name="io.fabric.ApiKey"
-            android:value="6c1528b3bbc66a9d925a39b9982d20e328e8e509" />
+        <!--<meta-data-->
+            <!--android:name="io.fabric.ApiKey"-->
+            <!--android:value="6c1528b3bbc66a9d925a39b9982d20e328e8e509" />-->
 
     </application>
 
