@@ -769,7 +769,7 @@ public class Util {
     public static String cal2DateWithSlash(@NonNull Calendar cal, @NonNull Context context){
         String md = cal2date(cal, DATE_PATTERN_SLASH_MD);
         String[] dof = context.getResources().getStringArray(R.array.dof);
-        return md +" "+ dof[cal.get(Calendar.DAY_OF_WEEK)];//Calendar.DAY_OF_WEEK-1は1はじまり
+        return md +" "+ dof[cal.get(Calendar.DAY_OF_WEEK)-1];//Calendar.DAY_OF_WEEK-1は1はじまり
     }
 
     public static int getToolBarHeight(Context context) {
