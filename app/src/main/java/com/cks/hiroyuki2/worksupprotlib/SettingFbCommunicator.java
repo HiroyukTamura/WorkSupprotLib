@@ -87,7 +87,7 @@ public abstract class SettingFbCommunicator implements OnSuccessListener<UploadT
             return;
         }
 
-        Toast.makeText(fragment.getContext(), "アップロードしています...", Toast.LENGTH_SHORT).show();
+        Toast.makeText(fragment.getContext(), fragment.getString(R.string.msg_start_upload), Toast.LENGTH_SHORT).show();
         String type = Util.getExtension(fragment.getContext(), uri);
         String fileName = myUid + "." + type;
 

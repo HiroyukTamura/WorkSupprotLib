@@ -55,6 +55,17 @@ public class Group implements Serializable {
                         photoUrl;
     }
 
+    /**
+     * for deep copy
+     */
+    public Group(@NonNull Group group){
+        userList = new ArrayList<>(group.userList);
+        groupName = group.groupName;
+        groupKey = group.groupKey;
+        contentList = new ArrayList<>(group.contentList);
+        host = group.host;
+        photoUrl = group.photoUrl;
+    }
 
     @Contract("_, null, _ -> null")
     @Nullable

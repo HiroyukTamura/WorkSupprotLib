@@ -11,7 +11,6 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.util.Log;
 
-import com.cks.hiroyuki2.worksupportlib.R;
 import com.cks.hiroyuki2.worksupprotlib.Entity.RecordData;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -19,11 +18,9 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.ChildEventListener;
-import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -38,11 +35,8 @@ import java.util.List;
 import java.util.Locale;
 
 import static com.cks.hiroyuki2.worksupprotlib.Util.DEFAULT;
-import static com.cks.hiroyuki2.worksupprotlib.Util.cal2date;
-import static com.cks.hiroyuki2.worksupprotlib.Util.datePattern;
 import static com.cks.hiroyuki2.worksupprotlib.Util.delimiterOfNum;
 import static com.cks.hiroyuki2.worksupprotlib.Util.logStackTrace;
-import static com.cks.hiroyuki2.worksupprotlib.Util.makeScheme;
 import static com.cks.hiroyuki2.worksupprotlib.Util.onError;
 
 /**
@@ -166,7 +160,7 @@ public class FirebaseConnection implements GoogleApiClient.OnConnectionFailedLis
 //            return;
 //        }
 
-        setListenerForInitNode(context);
+//        setListenerForInitNode(context);
 
         FirebaseFirestore.getInstance().collection("holiday").document("all").get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
             @Override
@@ -192,35 +186,35 @@ public class FirebaseConnection implements GoogleApiClient.OnConnectionFailedLis
         return activeNetwork != null && activeNetwork.isConnectedOrConnecting();
     }
 
-    private void setListenerForInitNode(final Context context){
-        final ValueEventListener listener = new ValueEventListener() {
-
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                Log.d(TAG, "onDataChange: fire");
-                if (!dataSnapshot.exists()){
-                    initNode();
-                }
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-                Log.d(TAG, "onCancelled: えらーーー！！");
-                onError(context, "onCancelled: " + databaseError.getMessage(), R.string.error);
-            }
-        };
-
-        userAttrDir.addListenerForSingleValueEvent(listener);
-
-//        new Handler().postDelayed(new Runnable() {
+//    private void setListenerForInitNode(final Context context){
+//        final ValueEventListener listener = new ValueEventListener() {
+//
 //            @Override
-//            public void run() {
-//                userAttrDir.removeEventListener(listener);
-//                Log.d(TAG, "run() called");
-//                //UIに通知
+//            public void onDataChange(DataSnapshot dataSnapshot) {
+//                Log.d(TAG, "onDataChange: fire");
+//                if (!dataSnapshot.exists()){
+//                    initNode();
+//                }
 //            }
-//        }, 3000);
-    }
+//
+//            @Override
+//            public void onCancelled(DatabaseError databaseError) {
+//                Log.d(TAG, "onCancelled: えらーーー！！");
+//                onError(context, "onCancelled: " + databaseError.getMessage(), R.string.error);
+//            }
+//        };
+//
+//        userAttrDir.addListenerForSingleValueEvent(listener);
+//
+////        new Handler().postDelayed(new Runnable() {
+////            @Override
+////            public void run() {
+////                userAttrDir.removeEventListener(listener);
+////                Log.d(TAG, "run() called");
+////                //UIに通知
+////            }
+////        }, 3000);
+//    }
 
     @Override
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
@@ -383,25 +377,25 @@ public class FirebaseConnection implements GoogleApiClient.OnConnectionFailedLis
             Log.d(TAG, "onComplete: 成功！" + databaseReference.toString());
     }
 
-    private void initNode(){
-        String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
-        String date = cal2date(Calendar.getInstance(), datePattern);
-        HashMap<String, Object> map = new HashMap<>();
-        map.put(makeScheme("userData", uid, "registeredDate"), date);
-        map.put(makeScheme("userData", uid, "template"), DEFAULT);
-        map.put(makeScheme("userData", uid, "group", DEFAULT), DEFAULT);
-        map.put(makeScheme("friend", uid, DEFAULT, "name"), DEFAULT);
-        map.put(makeScheme("friend", uid, DEFAULT, "photoUrl"), DEFAULT);
-        map.put(makeScheme("userParam", uid), DEFAULT);
-//        Calendar cal = Calendar.getInstance();
-//        for (int i=0; i<12; i++){
-//            String yearMon =  cal2date(cal, DATE_PATTERN_YM);
-//            map.put(yearMon, DEFAULT);
-//            cal.add(Calendar.MONTH, 1);
-//        }
-
-        getRootRef().updateChildren(map, this);
-    }
+//    private void initNode(){
+//        String uid = FirebaseAuth.getInstance().getCurrentUser().getUid();
+//        String date = cal2date(Calendar.getInstance(), datePattern);
+//        HashMap<String, Object> map = new HashMap<>();
+//        map.put(makeScheme("userData", uid, "registeredDate"), date);
+//        map.put(makeScheme("userData", uid, "template"), DEFAULT);
+//        map.put(makeScheme("userData", uid, "group", DEFAULT), DEFAULT);
+//        map.put(makeScheme("friend", uid, DEFAULT, "name"), DEFAULT);
+//        map.put(makeScheme("friend", uid, DEFAULT, "photoUrl"), DEFAULT);
+//        map.put(makeScheme("userParam", uid), DEFAULT);
+////        Calendar cal = Calendar.getInstance();
+////        for (int i=0; i<12; i++){
+////            String yearMon =  cal2date(cal, DATE_PATTERN_YM);
+////            map.put(yearMon, DEFAULT);
+////            cal.add(Calendar.MONTH, 1);
+////        }
+//
+//        getRootRef().updateChildren(map, this);
+//    }
 
     private void setIndex(){
         Log.d(TAG, "setIndex: fire");
