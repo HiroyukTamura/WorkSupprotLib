@@ -7,3 +7,9 @@
 /build
 /captures
 .externalNativeBuild
+/.gitignore
+/app/fabric.properties
+/app/proguard-rules.pro
+/app/.gitignore
+*.jks
+/gradle/

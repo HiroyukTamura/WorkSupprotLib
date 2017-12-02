@@ -60,6 +60,7 @@ import com.google.android.gms.ads.MobileAds;
 import com.google.firebase.analytics.FirebaseAnalytics;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.storage.FileDownloadTask;
 import com.google.firebase.storage.UploadTask;
 import com.google.gson.Gson;
@@ -812,6 +813,7 @@ public class Util {
         }
     }
 
+    //region Ntfまわり
     public static void showUploadingNtf(Class target, Context context, UploadTask.TaskSnapshot taskSnapshot, String fileName, int id){
         String text = context.getString(R.string.msg_start_upload);
         NotificationCompat.Builder builder = createNtfBase(target, context, fileName, text, id)
@@ -886,5 +888,26 @@ public class Util {
             notificationBuilder.setCategory(Notification.CATEGORY_MESSAGE);
 
         showNtf(context, ntfId, notificationBuilder.build());
+    }
+    //endregion
+
+    @Nullable @Contract(pure = true)
+    public static String checkAdmittionAsMember(@Nullable DataSnapshot dataSnapshot, @NonNull String uid){
+        if (dataSnapshot == null)
+            return "dataSnapshot == null";
+        if (!dataSnapshot.exists())
+            return "!dataSnapshot.exists() グループ消滅？";
+        if (!dataSnapshot.hasChild("member")){
+            return "!dataSnapshot.hasChild(\"member\")　グループ消滅？";
+        }
+
+        DataSnapshot memberSnap = dataSnapshot.child("member");
+        if (!memberSnap.hasChild(uid)){
+            return "!dataSnapshot.hasChild(uid) グループを既に退会？";
+        }
+        if (!memberSnap.child(uid).child("isChecked").getValue(Boolean.class)){
+            return "グループ未加入？";
+        }
+        return null;
     }
 }

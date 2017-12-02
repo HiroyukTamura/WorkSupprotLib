@@ -33,10 +33,12 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.util.HashMap;
 
+import static com.cks.hiroyuki2.worksupprotlib.FirebaseConnection.getRef;
 import static com.cks.hiroyuki2.worksupprotlib.FirebaseStorageUtil.LIMIT_SIZE_PROF;
 import static com.cks.hiroyuki2.worksupprotlib.FirebaseStorageUtil.isOverSize;
 import static com.cks.hiroyuki2.worksupprotlib.Util.DEFAULT;
 import static com.cks.hiroyuki2.worksupprotlib.Util.INTENT_KEY_NEW_PARAM;
+import static com.cks.hiroyuki2.worksupprotlib.Util.makeScheme;
 import static com.cks.hiroyuki2.worksupprotlib.Util.onError;
 
 /**
@@ -67,9 +69,9 @@ public abstract class SettingFbCommunicator implements OnSuccessListener<UploadT
      */
     public SettingFbCommunicator(Fragment fragment, Intent intent, @schemeCode String scheme){
         this.fragment = fragment;
-        if (fragment instanceof OnFailureListener){
+        if (fragment instanceof OnFailureListener)
             failureListener = (OnFailureListener) fragment;
-        } else
+        else
             throw new IllegalArgumentException("ばか！");
         this.intent = intent;
         user = FirebaseAuth.getInstance().getCurrentUser();
@@ -145,11 +147,8 @@ public abstract class SettingFbCommunicator implements OnSuccessListener<UploadT
             return;
         }
 
-        DatabaseReference refMyFriends = FirebaseDatabase.getInstance().getReference()
-                .child("friend")
-                .child(myUid);
-
-        refMyFriends.addListenerForSingleValueEvent(this);
+        getRef(makeScheme("friend", myUid))
+                .addListenerForSingleValueEvent(this);
     }
 
     @Override
@@ -157,17 +156,11 @@ public abstract class SettingFbCommunicator implements OnSuccessListener<UploadT
         if (!isSet1stListener){
 
             isSet1stListener = true;
-
             setUpdateMap(dataSnapshot);
-
-            DatabaseReference refMyGroup = FirebaseDatabase.getInstance().getReference()
-                        .child("userData")
-                        .child(myUid)
-                        .child("group");
-            refMyGroup.addListenerForSingleValueEvent(this);
+            getRef(makeScheme("userData", myUid, "group"))
+                    .addListenerForSingleValueEvent(this);
 
         } else {
-
             setUpdateMap(dataSnapshot);
 
             if (updatingMap.isEmpty()){

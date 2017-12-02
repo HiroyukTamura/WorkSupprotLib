@@ -176,10 +176,10 @@
     <string name="msg_cancel">キャンセルしました</string>
     <string name="msg_delete_item">アイテムを削除しました</string>
     <string name="msg_sync_data">データを同期しました</string>
-    <string name="msg_start_upload">アップロードしています...</string>
+    <string name="msg_start_upload">アップロードしています…</string>
     <string name="msg_succeed_upload">アップロードに成功しました</string>
     <string name="msg_succeed_make_doc">ドキュメントを作成しました</string>
-    <string name="msg_succeed_download">ダウンロードしています...</string>
+    <string name="msg_succeed_download">ダウンロードしています…</string>
     <string name="msg_failed_download">ダウンロードに失敗しました</string>
     <string name="msg_failed_upload">アップロードに失敗しました</string>
     <string name="ntf_channel">通信</string>
