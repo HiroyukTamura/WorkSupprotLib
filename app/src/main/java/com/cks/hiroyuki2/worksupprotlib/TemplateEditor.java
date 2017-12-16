@@ -7,7 +7,6 @@ package com.cks.hiroyuki2.worksupprotlib;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.util.Log;
 
 import com.cks.hiroyuki2.worksupprotlib.Entity.RecordData;
 import com.cks.hiroyuki2.worksupprotlib.Entity.TimeEvent;
@@ -103,8 +102,7 @@ public class TemplateEditor {
         }
     }
 
-    public static boolean initDefaultTemplate(Context context) {
-        Log.d(TAG, "initFile: fire");
+    public static List<RecordData> getDefaultTempList(Context context) {
         List<RecordData> list = new ArrayList<>(5);
         for (int i = 0; i < 6; i++) {
             RecordData data = new RecordData();
@@ -168,6 +166,6 @@ public class TemplateEditor {
             list.add(data);
         }
 
-        return applyTemplate(list, context) && applyTemplateAsDefault(list, context);
+        return list;
     }
 }
