@@ -90,6 +90,7 @@ public class TemplateEditor {
         return innerApplyTemplate(list, context, TEMPLATE_SERIALIZE_DEFAULT);
     }
 
+
     private static boolean innerApplyTemplate(List<RecordData> list, Context context, String fileName){
         try {
             ObjectOutputStream out = new ObjectOutputStream(context.openFileOutput(fileName, Context.MODE_PRIVATE));
