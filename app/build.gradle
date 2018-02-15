@@ -92,5 +92,7 @@ dependencies {
     compile 'com.gordonwong:material-sheet-fab:1.2.1'
     compile 'com.jakewharton:butterknife:9.0.0-SNAPSHOT'
     compile 'de.hdodenhof:circleimageview:2.2.0'
+    compile 'com.github.PhilJay:MPAndroidChart:v3.0.3'
+    compile 'com.github.castorflex.verticalviewpager:library:19.0.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:9.0.0-SNAPSHOT'
 }
