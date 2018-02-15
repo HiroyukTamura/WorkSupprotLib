@@ -116,6 +116,7 @@ public class Util {
     public final static String DATE_PATTERN_SLASH_MD = "M/dd";
 
     public final static String DEFAULT = "DEFAULT";
+    public final static String UNSET_NAME = "名称未設定";
     public final static String PARAM_ITEM_LEN = "PARAM_ITEM_LEN";
 
     public final static String PREF_KEY_QR_PW = "qr_pw";
@@ -909,5 +910,17 @@ public class Util {
             return "グループ未加入？";
         }
         return null;
+    }
+
+    /**
+     * @return 例外時Integer.MAX_VALUE
+     */
+    public static  int getPosFromUid(@NonNull List<User> userList, @NonNull String uid){
+        for (int i = 0; i < userList.size(); i++) {
+            if (userList.get(i).getUserUid().equals(uid)){
+                return i;
+            }
+        }
+        return Integer.MAX_VALUE;
     }
 }
