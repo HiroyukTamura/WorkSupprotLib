@@ -915,7 +915,7 @@ public class Util {
     /**
      * @return 例外時Integer.MAX_VALUE
      */
-    public static  int getPosFromUid(@NonNull List<User> userList, @NonNull String uid){
+    public static int getPosFromUid(@NonNull List<User> userList, @NonNull String uid){
         for (int i = 0; i < userList.size(); i++) {
             if (userList.get(i).getUserUid().equals(uid)){
                 return i;
