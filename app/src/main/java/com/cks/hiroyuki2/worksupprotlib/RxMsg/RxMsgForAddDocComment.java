@@ -26,7 +26,7 @@ public class RxMsgForAddDocComment {
     private String groupKey;
     private String newVal;
 
-    RxMsgForAddDocComment(@NonNull String groupKey, @NonNull String contentKey, @NonNull String newVal){
+    public RxMsgForAddDocComment(@NonNull String groupKey, @NonNull String contentKey, @NonNull String newVal){
         this.groupKey = groupKey;
         this.contentKey = contentKey;
         this.newVal = newVal;

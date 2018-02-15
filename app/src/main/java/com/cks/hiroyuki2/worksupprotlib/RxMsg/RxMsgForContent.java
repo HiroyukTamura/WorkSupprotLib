@@ -28,7 +28,7 @@ public class RxMsgForContent {
     private String groupKey;
     private Content content;
 
-    RxMsgForContent(@NonNull String groupKey, @NonNull Content content) {
+    public RxMsgForContent(@NonNull String groupKey, @NonNull Content content) {
         this.groupKey = groupKey;
         this.content = content;
     }

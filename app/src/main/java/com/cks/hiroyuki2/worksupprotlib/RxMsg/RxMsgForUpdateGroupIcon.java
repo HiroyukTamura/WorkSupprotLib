@@ -27,7 +27,7 @@ public class RxMsgForUpdateGroupIcon {
     private String groupKey;
     private Uri downloadUrl;
 
-    RxMsgForUpdateGroupIcon (@NonNull String groupKey, @NonNull Uri downloadUrl) {
+    public RxMsgForUpdateGroupIcon (@NonNull String groupKey, @NonNull Uri downloadUrl) {
         this.groupKey = groupKey;
         this.downloadUrl = downloadUrl;
     }
