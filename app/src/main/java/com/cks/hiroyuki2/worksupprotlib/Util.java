@@ -576,14 +576,15 @@ public class Util {
     }
 
     private static void setImgWithPicasso(Context context, Uri uri, @DrawableRes int errorImg, ImageView target){
-        Picasso.with(context)
+
+        Picasso.get()
                 .load(uri)
                 .error(errorImg)
                 .into(target);
     }
 
     private static void setImgWithPicasso(Context context, String uri, @DrawableRes int errorImg, ImageView target){
-        Picasso.with(context)
+        Picasso.get()
                 .load(uri)
                 .error(errorImg)
                 .into(target);
