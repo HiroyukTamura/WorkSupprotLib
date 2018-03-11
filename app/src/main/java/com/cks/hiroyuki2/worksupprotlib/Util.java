@@ -553,7 +553,7 @@ public class Util {
     //region setImgFromStorage
     public static void setImgFromStorage(User user, ImageView iv, @DrawableRes int errorDrw){
         if (user.getPhotoUrl() != null && !user.getPhotoUrl().equals("null")){
-            setImgWithPicasso(iv.getContext(), user.getPhotoUrl(), errorDrw, iv);
+            setImgWithPicasso(user.getPhotoUrl(), errorDrw, iv);
         } else {
             iv.setImageResource(errorDrw);
         }
@@ -561,7 +561,7 @@ public class Util {
 
     public static void setImgFromStorage(@NonNull FirebaseUser user, ImageView iv, @DrawableRes int errorDrw){
         if (user.getPhotoUrl() != null && !user.getPhotoUrl().toString().equals("null")){
-            setImgWithPicasso(iv.getContext(), user.getPhotoUrl(), errorDrw, iv);
+            setImgWithPicasso(user.getPhotoUrl(), errorDrw, iv);
         } else {
             iv.setImageResource(errorDrw);
         }
@@ -569,13 +569,13 @@ public class Util {
 
     public static void setImgFromStorage(@Nullable String photoUrl, ImageView iv, @DrawableRes int errorDrw){
         if (photoUrl != null && !photoUrl.equals("null")){
-            setImgWithPicasso(iv.getContext(), photoUrl, errorDrw, iv);
+            setImgWithPicasso(photoUrl, errorDrw, iv);
         } else {
             iv.setImageResource(errorDrw);
         }
     }
 
-    private static void setImgWithPicasso(Context context, Uri uri, @DrawableRes int errorImg, ImageView target){
+    private static void setImgWithPicasso(Uri uri, @DrawableRes int errorImg, ImageView target){
 
         Picasso.get()
                 .load(uri)
@@ -583,7 +583,7 @@ public class Util {
                 .into(target);
     }
 
-    private static void setImgWithPicasso(Context context, String uri, @DrawableRes int errorImg, ImageView target){
+    private static void setImgWithPicasso(String uri, @DrawableRes int errorImg, ImageView target){
         Picasso.get()
                 .load(uri)
                 .error(errorImg)
