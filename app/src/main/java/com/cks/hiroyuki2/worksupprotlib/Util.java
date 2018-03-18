@@ -576,7 +576,6 @@ public class Util {
     }
 
     private static void setImgWithPicasso(Uri uri, @DrawableRes int errorImg, ImageView target){
-
         Picasso.get()
                 .load(uri)
                 .error(errorImg)
