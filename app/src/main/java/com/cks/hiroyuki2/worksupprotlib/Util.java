@@ -590,6 +590,7 @@ public class Util {
     }
     //endregion
 
+
     //region safにintent送る
     public static void kickSaf(Activity activity, int requestCode){
         Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
