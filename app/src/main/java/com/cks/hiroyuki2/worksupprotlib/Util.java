@@ -174,7 +174,7 @@ public class Util {
     private static final String TAG = "MANUAL_TAG: " + Util.class.getSimpleName();
 
     //region Calender⇔Date
-    public static String cal2date(Calendar cal, String pattern){
+    public static String cal2date(@NonNull Calendar cal, String pattern){
         SimpleDateFormat sdf = new SimpleDateFormat(pattern, Locale.getDefault());
         return sdf.format(cal.getTime());
     }
@@ -200,21 +200,21 @@ public class Util {
     }
 
     //region px, dp, spなどの変換まわり
-    public static int dp2px(Context context, int dp){
+    public static int dp2px(@NonNull Context context, int dp){
         final float scale = context.getResources().getDisplayMetrics().density;
         return  (int) (dp * scale + 0.5f);
     }
 
-    public static float px2dp(Context context, int px){
+    public static float px2dp(@NonNull Context context, int px){
         final float scale = context.getResources().getDisplayMetrics().density;
         return px/scale;
     }
 
-    public static float sp2px(float sp, Context context) {
+    public static float sp2px(float sp, @NonNull Context context) {
         return  TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, sp, context.getResources().getDisplayMetrics());
     }
 
-    public static float px2sp(float px, Context content){
+    public static float px2sp(float px, @NonNull Context content){
         return px / content.getResources().getDisplayMetrics().scaledDensity;
     }
     //endregion
@@ -239,7 +239,7 @@ public class Util {
     }
 
     //scrollViewのスクショ撮るときに使ってください
-    public static Bitmap loadBitmapFromView(View v, int width, int height) {
+    public static Bitmap loadBitmapFromView(@NonNull View v, int width, int height) {
         Bitmap b = Bitmap.createBitmap(width , height, Bitmap.Config.ARGB_8888);
         Canvas c = new Canvas(b);
         v.layout(0, 0, v.getLayoutParams().width, v.getLayoutParams().height);
@@ -247,7 +247,7 @@ public class Util {
         return b;
     }
 
-    public static RecyclerView setRecycler(Context context, View view, RecyclerView.Adapter adapter, int id){
+    public static RecyclerView setRecycler(@NonNull Context context, @NonNull View view, @NonNull RecyclerView.Adapter adapter, int id){
         RecyclerView recyclerView = view.findViewById(id);
         recyclerView.setNestedScrollingEnabled(false);
 
@@ -286,7 +286,7 @@ public class Util {
     }
 
     @NonNull
-    public static String joinArr(String[] strings, @NonNull String delimiter){
+    public static String joinArr(@NonNull String[] strings, @NonNull String delimiter){
         StringBuilder sb = new StringBuilder();
         for (String string : strings) {
             sb.append(string);
@@ -297,7 +297,7 @@ public class Util {
     }
 
     @NonNull
-    public static String joinArr(String[] strings){
+    public static String joinArr(@NonNull String[] strings){
         StringBuilder sb = new StringBuilder();
         for (String string : strings) {
             sb.append(string);
@@ -315,7 +315,7 @@ public class Util {
      * @return Nonnullかつ、エラー時にはemptyであることに注意してください
      */
     @NonNull
-    public static List<Bundle> data2Bundle(RecordData data){
+    public static List<Bundle> data2Bundle(@NonNull RecordData data){
         Log.d(TAG, "setDateData: fire");
 
         List<Bundle> list = new ArrayList<>();
@@ -364,7 +364,7 @@ public class Util {
     }
 
     @NonNull
-    public static RecordData bundle2Data(List<Bundle> bundles, @Nullable String dataName, int dataType, Calendar cal){
+    public static RecordData bundle2Data(List<Bundle> bundles, @Nullable String dataName, int dataType, @NonNull Calendar cal){
         RecordData data = new RecordData();
         data.dataName = dataName;
         data.dataType = dataType;
@@ -398,7 +398,7 @@ public class Util {
      * @return Nonnullかつ、エラー時にはemptyであることに注意してください
      */
     @NonNull
-    public static List<Bundle> data2BundleParams(RecordData data){
+    public static List<Bundle> data2BundleParams(@NonNull RecordData data){
         List<Bundle> list = new ArrayList<>();
         if (data.data == null || data.data.isEmpty())
             return list;
@@ -438,7 +438,7 @@ public class Util {
         return data;
     }
 
-    private static HashMap<String, Object> innerBundle2DataParams(List<Bundle> bundles){
+    private static HashMap<String, Object> innerBundle2DataParams(@NonNull List<Bundle> bundles){
         HashMap<String, Object> data = new HashMap<>();
         for (int i = 0; i < bundles.size(); i++) {
             String[] strings = bundles.get(i).getStringArray(PARAMS_VALUES);
@@ -469,12 +469,12 @@ public class Util {
         }
     }
 
-    public static void logAnalytics(@NonNull String eventName, Context context){
+    public static void logAnalytics(@NonNull String eventName, @NonNull Context context){
         FirebaseAnalytics analytics = FirebaseAnalytics.getInstance(context);
         analytics.logEvent(eventName, new Bundle());
     }
 
-    public static void logStackTrace(Exception e){
+    public static void logStackTrace(@NonNull Exception e){
         e.printStackTrace();
         Crashlytics.logException(e);
     }
@@ -539,19 +539,19 @@ public class Util {
     /**
      * @see "https://goo.gl/f6kZaG"
      */
-    public static String getExtension(Context context, Uri uri){
+    public static String getExtension(@NonNull Context context, Uri uri){
         ContentResolver cR = context.getContentResolver();
         MimeTypeMap mime = MimeTypeMap.getSingleton();
         return mime.getExtensionFromMimeType(cR.getType(uri));
     }
 
-    public static String getMimeType(Context context, Uri uri){
+    public static String getMimeType(@NonNull Context context, Uri uri){
         ContentResolver cR = context.getContentResolver();
         return cR.getType(uri);
     }
 
     //region setImgFromStorage
-    public static void setImgFromStorage(User user, ImageView iv, @DrawableRes int errorDrw){
+    public static void setImgFromStorage(@NonNull User user, ImageView iv, @DrawableRes int errorDrw){
         if (user.getPhotoUrl() != null && !user.getPhotoUrl().equals("null")){
             setImgWithPicasso(user.getPhotoUrl(), errorDrw, iv);
         } else {
@@ -592,14 +592,14 @@ public class Util {
 
 
     //region safにintent送る
-    public static void kickSaf(Activity activity, int requestCode){
+    public static void kickSaf(@NonNull Activity activity, int requestCode){
         Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
         intent.setType("image/*");
         intent.addCategory(Intent.CATEGORY_OPENABLE);
         activity.startActivityForResult(intent, requestCode);
     }
 
-    public static void kickSaf(Fragment fragment, int requestCode){
+    public static void kickSaf(@NonNull Fragment fragment, int requestCode){
         Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
         intent.setType("image/*");
         intent.addCategory(Intent.CATEGORY_OPENABLE);
@@ -608,7 +608,7 @@ public class Util {
     //endregion
 
     @Nullable
-    public static String getFileName(Context context, Uri uri) {
+    public static String getFileName(Context context, @NonNull Uri uri) {
         String result = null;
         if (uri.getScheme().equals("content")) {
             Cursor cursor = context.getContentResolver().query(uri, null, null, null, null);
@@ -640,13 +640,13 @@ public class Util {
         context.startActivity(share);
     }
 
-    public static void setNullableText(TextView tv, @Nullable String string){
+    public static void setNullableText(@NonNull TextView tv, @Nullable String string){
         if (string != null)
             tv.setText(string);
     }
 
     @Nullable
-    static String getNullableText(EditText editText){
+    static String getNullableText(@NonNull EditText editText){
         Editable e = editText.getText();
         if (e == null)
             return null;
@@ -654,28 +654,28 @@ public class Util {
     }
 
     @Nullable
-    public static String getNullableText(TextView textView){
+    public static String getNullableText(@NonNull TextView textView){
         CharSequence c = textView.getText();
         if (c == null)
             return null;
         return c.toString();
     }
 
-    public static void toast(Context context, boolean succeed, @StringRes int trueStr, @StringRes int falseStr){
+    public static void toast(@NonNull Context context, boolean succeed, @StringRes int trueStr, @StringRes int falseStr){
         if (succeed)
             Toast.makeText(context, trueStr, Toast.LENGTH_LONG).show();
         else
             Toast.makeText(context, falseStr, Toast.LENGTH_LONG).show();
     }
 
-    public static void kickIntentIcon(Fragment fragment, int intentKey){
+    public static void kickIntentIcon(@NonNull Fragment fragment, int intentKey){
         Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
         intent.setType("image/*");
         intent.addCategory(Intent.CATEGORY_OPENABLE);
         fragment.getActivity().startActivityFromFragment(fragment, intent, intentKey);
     }
 
-    public static void kickIntentIcon(Activity activity, int intentKey){
+    public static void kickIntentIcon(@NonNull Activity activity, int intentKey){
         Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
         intent.setType("image/*");
         intent.addCategory(Intent.CATEGORY_OPENABLE);
@@ -697,7 +697,7 @@ public class Util {
        return FirebaseAuth.getInstance().getCurrentUser();
     }
 
-    public static void initRecycler(Context context, RecyclerView rv, RecyclerView.Adapter adapter){
+    public static void initRecycler(@NonNull Context context, @NonNull RecyclerView rv, RecyclerView.Adapter adapter){
         rv.setLayoutManager(new LinearLayoutManager(context));
         rv.setNestedScrollingEnabled(false);
         rv.setAdapter(adapter);
@@ -735,7 +735,7 @@ public class Util {
     }
 
     @Nullable
-    public static RecordData getRecordDataByType(List<RecordData> dataList, int dataType){
+    public static RecordData getRecordDataByType(@NonNull List<RecordData> dataList, int dataType){
         for (RecordData data: dataList) {
             if (data.getDataType() == dataType){
                 return data;
@@ -762,7 +762,7 @@ public class Util {
         return view;
     }
 
-    public static Calendar getCopyOfCal(Calendar target){
+    public static Calendar getCopyOfCal(@NonNull Calendar target){
         Calendar cal = Calendar.getInstance();
         cal.setTime(target.getTime());
         return cal;
@@ -775,7 +775,7 @@ public class Util {
         return md +" "+ dof[cal.get(Calendar.DAY_OF_WEEK)-1];//Calendar.DAY_OF_WEEK-1は1はじまり
     }
 
-    public static int getToolBarHeight(Context context) {
+    public static int getToolBarHeight(@NonNull Context context) {
         int[] attrs = new int[] {R.attr.actionBarSize};
         TypedArray ta = context.obtainStyledAttributes(attrs);
         int toolBarHeight = ta.getDimensionPixelSize(0, -1);
